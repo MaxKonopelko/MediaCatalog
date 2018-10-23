@@ -14,3 +14,14 @@ export class AppComponent
     document.getElementById('content').innerHTML = this.components[index].init();
   }
 }
+
+const component = new AppComponent();
+const buttons = document.getElementsByClassName('b1');
+
+for (let i = 0; i < buttons.length; i++)
+{
+  buttons[i].addEventListener('click', () =>
+  {
+    component.init(i);
+  });
+}

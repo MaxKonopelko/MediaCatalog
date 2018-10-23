@@ -23,6 +23,8 @@ export class StorageService
         storageObj.index++;
       }
       this.browserStorage.setObject(storageObj);
+      console.log(storageObj);
+
     }
   else
     {
@@ -36,6 +38,7 @@ export class StorageService
         }
       }
       this.browserStorage.setObject(musicStorage);
+      console.log(musicStorage);
     }
   }
 

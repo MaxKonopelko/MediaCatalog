@@ -1,54 +1,41 @@
-import { AppComponent } from './app/app.component';
+import { IMusicModel } from './models/models';
+import { MusicService } from './services/music.service';
 
-const component = new AppComponent();
-const buttons = document.getElementsByClassName('b1');
+MusicService.clear();
+const mus: IMusicModel = {
+  name: 'fsffff'
+};
 
-for (let i = 0; i < buttons.length; i++)
-{
-  buttons[i].addEventListener('click', () =>
-  {
-    component.init(i);
-  });
-}
+const muss: IMusicModel = {
+  name: 'ggggg',
+};
 
-//const appComponent = new AppComponent();
-//appComponent.init();
+const musss: IMusicModel = {
+  name: 'aaaaa',
+};
 
-// MusicService.clear();
-// const mus: IMusicModel = {
-//   name: 'fsffff'
-// };
-//
-// const muss: IMusicModel = {
-//   name: 'ggggg',
-// };
-//
-// const musss: IMusicModel = {
-//   name: 'aaaaa',
-// };
-//
-// const mussss: IMusicModel = {
-//   name: 'kkkkkkkkkkk',
-// };
-//
-// const musssss: IMusicModel = {
-//   name: 'mmmmmmmmmmm',
-// };
-//
-// const adad: IMusicModel = {
-//   name: 'eweeeeeeee',
-// };
-//
-// const adadd: IMusicModel = {
-//   name: 'ffffffffffff',
-// };
-//
-// const z = [mus, muss, musss];
-// //const g = [mussss, musssss];
-// MusicService.addArray(z);
-// MusicService.add(adad);
-// MusicService.addArray(g);
-// MusicService.add(adadd);
+const mussss: IMusicModel = {
+  name: 'kkkkkkkkkkk',
+};
+
+const musssss: IMusicModel = {
+  name: 'mmmmmmmmmmm',
+};
+
+const adad: IMusicModel = {
+  name: 'eweeeeeeee',
+};
+
+const adadd: IMusicModel = {
+  name: 'ffffffffffff',
+};
+
+const z = [mus, muss, musss];
+const g = [mussss, musssss];
+MusicService.addArray(z);
+MusicService.add(adad);
+MusicService.addArray(g);
+MusicService.add(adadd);
 
 //MusicService.add(mus);
 //MusicService.add(muss);
