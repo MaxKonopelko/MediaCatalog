@@ -1,0 +1,140 @@
+html {
+  overflow: scroll;
+}
+
+body {
+  margin: 0;
+  background: #fafbfc;
+  //font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {width: 5px;background: 0 0}
+
+::-webkit-scrollbar-button:vertical:end:decrement, ::-webkit-scrollbar-button:vertical:start:increment {display: none}
+
+::-webkit-scrollbar-thumb:vertical {-webkit-box-shadow: inset 3px 0 #fff;box-shadow: inset 3px 0 #fff;background: #00e20f}
+
+::-webkit-scrollbar-thumb:vertical:hover {-webkit-box-shadow: none;box-shadow: none}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  .main {
+    width: 950px;
+    max-width: 1000px;
+
+    div {
+      border: 1px solid #ddd;
+      margin: 10px;
+    }
+
+    .header {
+      height: 100px;
+      display: flex;
+      justify-content: flex-end;
+      background: #fff;
+    }
+
+    .menu {
+      height: 50px;
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      background: #fff;
+      font-size: 36px;
+      font-family: 'Lobster', cursive;
+      justify-content: center;
+      text-align: center;
+
+      div:hover {
+        box-shadow: inset 0 0 0 2px #53ea93;
+        transition: 1s;
+        background: #fafbfc;
+        cursor: pointer;
+      }
+
+      .b1 {
+        margin: 15px;
+        flex: 1;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .content {
+      height: 700px;
+      justify-content: center;
+      background: #fff;
+
+      .music-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+      }
+      .music-data {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+
+        .music-list {
+          width: 400px;
+
+          .track-list {
+            display: flex;
+            align-items: center;
+            height: 50px;
+          }
+        }
+        .music-content {
+          width: 400px;
+
+          .music-image {
+            background-size: cover;
+            width: 380px; // например
+            height: 300px;
+            overflow: hidden;
+          }
+          .music-name {
+          }
+          .music-play {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 99px;
+          }
+        }
+      }
+
+      .film-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+      }
+      .film-data {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+      }
+
+
+      .photo-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+      }
+      .photo-data {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+  }
+}
+
