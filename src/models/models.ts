@@ -1,12 +1,30 @@
-export interface IStorageModel
+export interface IStorageModel<TModel>
 {
   index: number;
-  musicList?: IMusicModel[];
+  list: TModel[];
 }
 
-export interface IMusicModel
+export interface IEntity
 {
   id?: number;
+}
+
+export interface IImageModel extends IEntity
+{
+  link?: string;
+  name?: string;
+  authorFullName?: string;
+}
+
+export interface IMusicModel extends IEntity
+{
+  link?: string;
+  name?: string;
+  authorFullName?: string;
+}
+
+export interface IFilmsModel extends IEntity
+{
   link?: string;
   name?: string;
   authorFullName?: string;

@@ -1,15 +1,21 @@
-import { IMusicModel, IStorageModel } from '../models/models';
+import { IMusicModel } from '../models/models';
 import { StorageService } from './storage.service';
 
 class MusicServiceClass
 {
-  private storage = new StorageService();
+  private storage = new StorageService<IMusicModel>('music');
 
   public add(item: IMusicModel): void
   {
-    const musicList: IStorageModel = this.storage.getObj();
-    musicList.musicList.push(item);
-    this.storage.addMusic(musicList.musicList);
+    const list: IMusicModel[]  = [];
+    const musicList = this.storage.getObj();
+
+    if (musicList !== null)
+    {
+      musicList.list.push(item);
+    }
+    list.push(item);
+    this.storage.addArray(list);
   }
 
   public addArray(items: IMusicModel[]): void
@@ -19,9 +25,9 @@ class MusicServiceClass
     {
       for (const music of items)
       {
-        musicList.musicList.push(music);
+        musicList.list.push(music);
       }
-      this.storage.addMusic(musicList.musicList);
+      this.storage.addArray(musicList.list);
     }
     else
     {
@@ -30,14 +36,9 @@ class MusicServiceClass
       {
         arrList.push(music);
       }
-      this.storage.addMusic(arrList);
+      this.storage.addArray(arrList);
     }
   }
-
-  // public getAll(): object
-  // {
-  //   return this.storage.getObj;
-  // }
 
   public clear(): void
   {

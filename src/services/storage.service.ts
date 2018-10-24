@@ -1,48 +1,54 @@
-import { IMusicModel, IStorageModel } from '../models/models';
+import { IEntity, IStorageModel } from '../models/models';
 import { BrowserStorage } from '../libreris/browser-storage';
 
-export class StorageService
+export class StorageService<T extends IEntity>
 {
-  private browserStorage = new BrowserStorage<IStorageModel>('music');
+  private readonly key: string;
+  private browserStorage = new BrowserStorage<IStorageModel<T>>(this.key);
 
-  public addMusic(items: IMusicModel[]): void
+  constructor(key: string)
   {
-    const musicStorage = this.browserStorage.getObject();
+    this.key = key;
+  }
 
-    if (musicStorage === null)
+  public addArray(items: T[]): void
+  {
+    const storage = this.browserStorage.getObject();
+
+    if (storage === null)
     {
-      const storageObj: IStorageModel = {
+      const storageObj: IStorageModel<T> = {
         index: 0,
-        musicList: [],
+        list: [],
       };
 
-      for (const music of items)
+      for (const item of items)
       {
-        music.id = storageObj.index;
-        storageObj.musicList.push(music);
+        item.id = storageObj.index;
+        storageObj.list.push(item);
         storageObj.index++;
       }
       this.browserStorage.setObject(storageObj);
       console.log(storageObj);
 
     }
-  else
+    else
     {
-      for (const music of items)
+      for (const item of items)
       {
-        if (music.id === (null || undefined))
+        if (item.id === (null || undefined))
         {
-          music.id = musicStorage.index;
-          musicStorage.musicList.push(music);
-          musicStorage.index++;
+          item.id = storage.index;
+          storage.list.push(item);
+          storage.index++;
         }
       }
-      this.browserStorage.setObject(musicStorage);
-      console.log(musicStorage);
+      this.browserStorage.setObject(storage);
+      console.log(storage);
     }
   }
 
-  public getObj(): IStorageModel
+  public getObj(): IStorageModel<T>
   {
     return this.browserStorage.getObject();
   }

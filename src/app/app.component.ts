@@ -1,10 +1,11 @@
-import { BooksComponent } from './views/books.component';
-import { MusicsComponent } from './views/musics.component';
-import { FilmsComponent } from './views/films.component';
+import { ImagesComponent } from './views/images/images.component';
+import { MusicsComponent } from './views/musics/musics.component';
+import { FilmsComponent } from './views/films/films.component';
+import { IComponent } from './types';
 
-export class AppComponent
+export class AppComponent implements IComponent
 {
-  private booksComponent = new BooksComponent();
+  private booksComponent = new ImagesComponent();
   private musicsComponent = new MusicsComponent();
   private filmsComponent = new FilmsComponent();
   private components = [this.booksComponent, this.musicsComponent, this.filmsComponent];
