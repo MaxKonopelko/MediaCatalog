@@ -1,11 +1,8 @@
-import { IFilmsModel, IImageModel, IMusicModel } from './models/models';
-import { MusicService } from './services/music.service';
-import { AppComponent } from './app/app.component';
 import { ImageService } from './services/image.service';
-import { FilmService } from './services/film.service';
+import { AppComponent } from './app/app.component';
 
-// const component = new AppComponent();
-// component.init(0);
+const component = new AppComponent();
+component.init(0);
 
 // const mus: IMusicModel = {
 //   name: 'fsffff'
@@ -31,24 +28,100 @@ import { FilmService } from './services/film.service';
 //   name: 'eweeeeeeee',
 // };
 
-MusicService.clear();
+//MusicService.clear();
+ImageService.clear();
 
-const x: IMusicModel[] = [
-  {name: 'asd'},
-  {name: 'fff'},
-  {name: 'gggg'},
-  {name: 'asd'},
-];
+// const x: IMusicModel[] = [
+//   {name: 'asd'},
+//   {name: 'fff'},
+//   {name: 'gggg'},
+//   {name: 'asd'},
+// ];
+//
+// const y: IMusicModel[] = [
+//   {name: 'sss'},
+//   {name: 'dddd'},
+//   {name: 'ffff'},
+//   {name: 'hhhhh'},
+// ];
+//
+// const z: IMusicModel = {
+//   name: 'zzzzzzzzzzz'
+// };
 
-const u: IImageModel[] = [
-  {name: '7777'},
-  {name: '8888'},
-  {name: '99999'},
-  {name: '33333'},
-];
+//
+// const u: IImageModel[] = [
+//   {name: '7777'},
+//   {name: '8888'},
+//   {name: '99999'},
+//   {name: '33333'},
+// ];
+//
+// const i: IImageModel[] = [
+//   {name: '999999'},
+//   {name: '000000'},
+//   {name: '0000999'},
+//   {name: '3330890800033'},
+// ];
 
-MusicService.addArray(x);
-ImageService.addArray(u);
+//
+// const image2: IImageModel = {
+//   name: '22222222222222',
+// };
+
+// MusicService.addArray(y);
+// MusicService.add(z);
+// ImageService.addArray(i);
+
+//ImageService.addArray(u);
+// MusicService.clear();
+
+//
+
+// const urlPhoto = document.getElementById('url-photo');
+// const photos = document.getElementById('photos');
+// let x = 0;
+//
+// urlPhoto.addEventListener('change', function (): void
+// {
+//   //Add Url in box "photo-size"
+//   document.getElementById('image')['src'] = document.getElementById('url-photo')['value'];
+//
+// });
+//
+// const submit = document.getElementById('form-image');
+// submit.addEventListener('s', function (): void
+// {
+//   //Create <li> and add in "photos"
+//   const newLi = document.createElement('li');
+//   newLi.className = 'photo-li';
+//   newLi.innerHTML = '<strong>Download!</strong> Фото ' + (++x);
+//   console.log(newLi);
+//   photos.appendChild(newLi);
+//
+//   const y = document.getElementById('url-photo')['value']
+//   const x = {
+//     link : '',
+//     name: '',
+//     authorFullName: '',
+//     top: '',
+//   };
+//   x.link = document.getElementById('url-photo')['value'];
+//   ImageService.add(x);
+// });
+
+//
+
+// const p: IMusicModel = {
+//   name: '7887'
+// };
+
+// MusicService.addArray(x);
+// ImageService.addArray(u);
+
+// ImageService.add(p);
+// MusicService.addArray(y);
+// ImageService.addArray(i);
 
 //
 // const z = [mus, muss, musss];

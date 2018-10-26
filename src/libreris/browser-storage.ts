@@ -16,10 +16,16 @@ export class BrowserStorage<T>
   public getObject(): T
   {
     const item = localStorage.getItem(this.key);
+
     return JSON.parse(item);
   }
 
   public clear(): void
+  {
+    localStorage.removeItem(this.key);
+  }
+
+  public clearAll(): void
   {
     localStorage.clear();
   }

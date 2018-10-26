@@ -7,37 +7,19 @@ class MusicServiceClass
 
   public add(item: IMusicModel): void
   {
-    const list: IMusicModel[]  = [];
-    const musicList = this.storage.getObj();
-
-    if (musicList !== null)
-    {
-      musicList.list.push(item);
-    }
-    list.push(item);
-    this.storage.addArray(list);
+    const musicList: IMusicModel[] = this.storage.getObj();
+    musicList.push(item);
+    this.storage.addArray(musicList);
   }
 
   public addArray(items: IMusicModel[]): void
   {
     const musicList = this.storage.getObj();
-    if (musicList !== null)
+    for (const music of items)
     {
-      for (const music of items)
-      {
-        musicList.list.push(music);
-      }
-      this.storage.addArray(musicList.list);
+      musicList.push(music);
     }
-    else
-    {
-      const arrList: IMusicModel[] = [];
-      for (const music of items)
-      {
-        arrList.push(music);
-      }
-      this.storage.addArray(arrList);
-    }
+    this.storage.addArray(musicList);
   }
 
   public clear(): void

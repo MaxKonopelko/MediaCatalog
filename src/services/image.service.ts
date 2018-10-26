@@ -1,4 +1,4 @@
-import { IImageModel, IStorageModel } from '../models/models';
+import { IImageModel } from '../models/models';
 import { StorageService } from './storage.service';
 
 class ImageServiceClass
@@ -7,36 +7,19 @@ class ImageServiceClass
 
   public add(item: IImageModel): void
   {
-    const list: IImageModel[]  = [];
-    const imageList: IStorageModel<IImageModel> = this.storage.getObj();
-    if (imageList !== null)
-    {
-      imageList.list.push(item);
-    }
-    list.push(item);
-    this.storage.addArray(list);
+    const imageList: IImageModel[] = this.storage.getObj();
+    imageList.push(item);
+    this.storage.addArray(imageList);
   }
 
   public addArray(items: IImageModel[]): void
   {
     const imageList = this.storage.getObj();
-    if (imageList !== null)
+    for (const image of items)
     {
-      for (const image of items)
-      {
-        imageList.list.push(image);
-      }
-      this.storage.addArray(imageList.list);
+      imageList.push(image);
     }
-    else
-    {
-      const arrList: IImageModel[] = [];
-      for (const image of items)
-      {
-        arrList.push(image);
-      }
-      this.storage.addArray(arrList);
-    }
+    this.storage.addArray(imageList);
   }
 
   public clear(): void

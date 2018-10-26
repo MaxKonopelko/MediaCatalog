@@ -9,23 +9,23 @@ export class ImagesComponent implements IComponent
             <div class="photo-data">
                 <div class="url-photo">
                     <div>
-                        <form action="/action_page.php">
+                        <form id="form-image">
                               <!--<label for="fname">URL IMAGE </label>-->
-                              <input type="text" id="fname" name="firstname" placeholder="Url image..">
-                              <input type="submit" value="Download">
+                              <input type="text" id="url-photo" value="" placeholder="Url image..">
+                              <input type="submit" id="submit" ">
                         </form>
                     </div>
 
                </div>             
                 <div class="photo-content">
                      <div class="photo-list">
-                           <ol class="photo-">
-                                <li>1</li>                            
+                           <ol class="photos" id="photos">
+                                                           
                            </ol>                                                
                      </div>
                      <div class="photo">
-                        <div class="photo-size">                      
-                            <img class="image" src="images/guf.jpg">
+                        <div class="photo-size">                                       
+                            <img class="image" id="image" src="http://placehold.it/350x350">
                         </div>
                      </div>
                 </div>

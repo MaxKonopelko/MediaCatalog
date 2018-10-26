@@ -1,14 +1,19 @@
-import { IEntity, IStorageModel } from '../models/models';
+import { IEntity } from '../models/models';
 import { BrowserStorage } from '../libreris/browser-storage';
+
+interface IStorageModel<TModel>
+{
+  index: number;
+  list: TModel[];
+}
 
 export class StorageService<T extends IEntity>
 {
-  private readonly key: string;
-  private browserStorage = new BrowserStorage<IStorageModel<T>>(this.key);
+  private readonly browserStorage: BrowserStorage<IStorageModel<T>>;
 
   constructor(key: string)
   {
-    this.key = key;
+    this.browserStorage = new BrowserStorage<IStorageModel<T>>(key);
   }
 
   public addArray(items: T[]): void
@@ -30,7 +35,6 @@ export class StorageService<T extends IEntity>
       }
       this.browserStorage.setObject(storageObj);
       console.log(storageObj);
-
     }
     else
     {
@@ -48,9 +52,10 @@ export class StorageService<T extends IEntity>
     }
   }
 
-  public getObj(): IStorageModel<T>
+  public getObj(): T[]
   {
-    return this.browserStorage.getObject();
+    const browserStorageData = this.browserStorage.getObject();
+    return browserStorageData ?  browserStorageData.list : [];
   }
 
   public clear(): void

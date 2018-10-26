@@ -1,4 +1,4 @@
-import { IFilmsModel, IStorageModel } from '../models/models';
+import { IFilmsModel } from '../models/models';
 import { StorageService } from './storage.service';
 
 class FilmServiceClass
@@ -7,36 +7,19 @@ class FilmServiceClass
 
   public add(item: IFilmsModel): void
   {
-    const list: IFilmsModel[]  = [];
-    const filmList: IStorageModel<IFilmsModel> = this.storage.getObj();
-    if (filmList !== null)
-    {
-      filmList.list.push(item);
-    }
-    list.push(item);
-    this.storage.addArray(list);
+    const filmList: IFilmsModel[] = this.storage.getObj();
+    filmList.push(item);
+    this.storage.addArray(filmList);
   }
 
   public addArray(items: IFilmsModel[]): void
   {
     const filmList = this.storage.getObj();
-    if (filmList !== null)
+    for (const image of items)
     {
-      for (const image of items)
-      {
-        filmList.list.push(image);
-      }
-      this.storage.addArray(filmList.list);
+      filmList.push(image);
     }
-    else
-    {
-      const arrList: IFilmsModel[] = [];
-      for (const image of items)
-      {
-        arrList.push(image);
-      }
-      this.storage.addArray(arrList);
-    }
+    this.storage.addArray(filmList);
   }
 
   public clear(): void

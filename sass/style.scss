@@ -183,17 +183,35 @@ body {
             flex: 1;
           }
 
+          .photo-li{
+            font-size: 20px;
+            font-family: 'Lobster', cursive;
+            margin: 10px;
+          }
+
           .photo {
             flex: 2;
             display: flex;
             justify-content: center;
             align-items: center;
               .photo-size{
+                 border: 1px solid #DDDDDD;
+                 width: 350px;
+                 height: 350px;
+                position: relative;
+
+
 
                 .image {
                   width:100%;
                   height:auto;
                   border: 5px solid darkgray;
+                  position: absolute;
+                  margin: auto;
+                  left: 0;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
                 }
               }
           }

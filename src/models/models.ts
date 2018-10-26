@@ -1,9 +1,3 @@
-export interface IStorageModel<TModel>
-{
-  index: number;
-  list: TModel[];
-}
-
 export interface IEntity
 {
   id?: number;
@@ -14,6 +8,7 @@ export interface IImageModel extends IEntity
   link?: string;
   name?: string;
   authorFullName?: string;
+  top?: string;
 }
 
 export interface IMusicModel extends IEntity
@@ -21,6 +16,7 @@ export interface IMusicModel extends IEntity
   link?: string;
   name?: string;
   authorFullName?: string;
+  food?: string;
 }
 
 export interface IFilmsModel extends IEntity

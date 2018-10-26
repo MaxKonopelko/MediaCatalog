@@ -138,12 +138,27 @@ body {
           flex: 3; }
           .container .main .content .photo-data .photo-content .photo-list {
             flex: 1; }
+          .container .main .content .photo-data .photo-content .photo-li {
+            font-size: 20px;
+            font-family: 'Lobster', cursive;
+            margin: 10px; }
           .container .main .content .photo-data .photo-content .photo {
             flex: 2;
             display: flex;
             justify-content: center;
             align-items: center; }
-            .container .main .content .photo-data .photo-content .photo .photo-size .image {
-              width: 100%;
-              height: auto;
-              border: 5px solid darkgray; }
+            .container .main .content .photo-data .photo-content .photo .photo-size {
+              border: 1px solid #DDDDDD;
+              width: 350px;
+              height: 350px;
+              position: relative; }
+              .container .main .content .photo-data .photo-content .photo .photo-size .image {
+                width: 100%;
+                height: auto;
+                border: 5px solid darkgray;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0; }
