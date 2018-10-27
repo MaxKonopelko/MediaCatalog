@@ -1,6 +1,8 @@
-export class FilmsComponent
+import { IComponent } from '../../types';
+
+export class FilmsComponent implements IComponent
 {
-  public init(): string
+  public template(): string
   {
     return `
         <div class="film-header">Films</div>

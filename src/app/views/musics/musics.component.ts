@@ -1,6 +1,8 @@
-export class MusicsComponent
+import { IComponent } from '../../types';
+
+export class MusicsComponent implements IComponent
 {
-  public init(): string
+  public template(): string
   {
     return `
             <div class="music-header">Name track</div>

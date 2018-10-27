@@ -1,4 +1,5 @@
 export interface IComponent
 {
-  init: (index?: number) => void;
+  onInit?: () => void;
+  template: () => string;
 }

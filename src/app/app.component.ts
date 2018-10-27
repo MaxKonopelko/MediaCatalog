@@ -1,28 +1,29 @@
 import { ImagesComponent } from './views/images/images.component';
 import { MusicsComponent } from './views/musics/musics.component';
 import { FilmsComponent } from './views/films/films.component';
-import { IComponent } from './types';
 
-export class AppComponent implements IComponent
+export class AppComponent
 {
-  private booksComponent = new ImagesComponent();
+  private imagesComponent = new ImagesComponent();
   private musicsComponent = new MusicsComponent();
   private filmsComponent = new FilmsComponent();
-  private components = [this.booksComponent, this.musicsComponent, this.filmsComponent];
+  private components = [this.imagesComponent, this.musicsComponent, this.filmsComponent];
 
-  public init(index: number): void
+  constructor()
   {
-    document.getElementById('content').innerHTML = this.components[index].init();
+    const buttons = document.getElementsByClassName('b1');
+
+    for (let i = 0; i < buttons.length; i++)
+    {
+      buttons[i].addEventListener('click', () =>
+      {
+        this.render(i);
+      });
+    }
   }
-}
 
-const component = new AppComponent();
-const buttons = document.getElementsByClassName('b1');
-
-for (let i = 0; i < buttons.length; i++)
-{
-  buttons[i].addEventListener('click', () =>
+  public render(index: number): void
   {
-    component.init(i);
-  });
+    document.getElementById('content').innerHTML = this.components[index].template();
+  }
 }

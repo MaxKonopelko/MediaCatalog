@@ -1,8 +1,24 @@
 import { IComponent } from '../../types';
+import { Component } from '../../../libreris/component';
 
+@Component
 export class ImagesComponent implements IComponent
 {
-  public init(): string
+  public onInit(): void
+  {
+    console.warn('onInit');
+
+    document.getElementById('form-image')
+      .addEventListener('submit', this.handleSubmit);
+  }
+
+  private handleSubmit(event: Event): void
+  {
+    event.preventDefault();
+    console.warn('AAAAAA1');
+  }
+
+  public template(): string
   {
     return ` 
             <div class="photo-header">Photo</div>
