@@ -8,6 +8,8 @@ body {
   background-color: #f2f2f2;
   //font-family: Roboto, sans-serif;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {width: 5px;background: 0 0}
@@ -19,12 +21,12 @@ body {
 ::-webkit-scrollbar-thumb:vertical:hover {-webkit-box-shadow: none;box-shadow: none}
 
 .container {
-  display: flex;
-  justify-content: center;
+
+  width: 950px;
+  max-width: 1000px;
 
   .main {
-    width: 950px;
-    max-width: 1000px;
+
 
     div {
       border: 1px solid #ddd;

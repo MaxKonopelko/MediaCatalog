@@ -11,28 +11,9 @@
 
 </head>
 <body>
-<div id="root"></div>
-
-<div class="container">
-    <div class="main">
-
-        <div class="header">
-            <form method="post" action="">
-                <input type="text" name="login" value="" placeholder="Логин или Email"><br>
-                <input type="password" name="password" value="" placeholder="Пароль"><br>
-                <input type="submit" name="commit" value="Войти">
-            </form>
-        </div>
-
-        <div class="menu">
-            <div class="b1" id="fl3"><i class="fa fa-photo" style="font-size:36px;"></i>Фото</div>
-            <div class="b1" id="fl2"><i class="fa fa-music" style="font-size:36px"></i>Музыка</div>
-            <div class="b1" id="fl1"><i class="fa fa-youtube-play" style="font-size:36px"></i>Фильмы</div>
-        </div>
-
-        <div class="content" id="content"></div>
-
-    </div>
+<div id="app-root" class="container">
+    <div id="auth-root" class="header"></div>
+    <div id="main-root" class="main"></div>
 </div>
 <script src="public/bundle.js"></script>
 </body>

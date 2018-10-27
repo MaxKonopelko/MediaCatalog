@@ -4,7 +4,9 @@ html {
 body {
   margin: 0;
   background-color: #f2f2f2;
-  font-size: 14px; }
+  font-size: 14px;
+  display: flex;
+  justify-content: center; }
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -23,142 +25,139 @@ body {
   box-shadow: none; }
 
 .container {
-  display: flex;
-  justify-content: center; }
-  .container .main {
-    width: 950px;
-    max-width: 1000px; }
-    .container .main div {
-      border: 1px solid #ddd;
-      margin: 5px; }
-    .container .main .header {
-      height: 100px;
+  width: 950px;
+  max-width: 1000px; }
+  .container .main div {
+    border: 1px solid #ddd;
+    margin: 5px; }
+  .container .main .header {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    background: #fff; }
+  .container .main .menu {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    font-size: 36px;
+    font-family: 'Lobster', cursive;
+    justify-content: center;
+    text-align: center; }
+    .container .main .menu div:hover {
+      box-shadow: inset 0 0 0 2px #53ea93;
+      transition: 1s;
+      background: #fafbfc;
+      cursor: pointer; }
+    .container .main .menu .b1 {
+      margin: 15px;
+      flex: 1; }
+      .container .main .menu .b1 i {
+        margin-right: 10px; }
+  .container .main .content {
+    height: 700px;
+    justify-content: center;
+    background: #fff; }
+    .container .main .content .music-header {
       display: flex;
-      justify-content: flex-end;
-      background: #fff; }
-    .container .main .menu {
-      height: 50px;
-      display: flex;
+      justify-content: center;
       align-items: center;
-      background: #fff;
-      font-size: 36px;
-      font-family: 'Lobster', cursive;
-      justify-content: center;
-      text-align: center; }
-      .container .main .menu div:hover {
-        box-shadow: inset 0 0 0 2px #53ea93;
-        transition: 1s;
-        background: #fafbfc;
-        cursor: pointer; }
-      .container .main .menu .b1 {
-        margin: 15px;
-        flex: 1; }
-        .container .main .menu .b1 i {
-          margin-right: 10px; }
-    .container .main .content {
-      height: 700px;
-      justify-content: center;
-      background: #fff; }
-      .container .main .content .music-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px; }
-      .container .main .content .music-data {
-        height: 500px;
-        display: flex;
-        justify-content: center; }
-        .container .main .content .music-data .music-list {
-          width: 400px; }
-          .container .main .content .music-data .music-list .track-list {
-            display: flex;
-            align-items: center;
-            height: 50px; }
-        .container .main .content .music-data .music-content {
-          width: 400px; }
-          .container .main .content .music-data .music-content .music-image {
-            background-size: cover;
-            width: 380px;
-            height: 300px;
-            overflow: hidden; }
-          .container .main .content .music-data .music-content .music-play {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 99px; }
-      .container .main .content .film-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px; }
-      .container .main .content .film-data {
-        height: 500px;
-        display: flex;
-        justify-content: center; }
-      .container .main .content .photo-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px; }
-      .container .main .content .photo-data {
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column; }
-        .container .main .content .photo-data .url-photo {
-          flex: 0.3; }
-          .container .main .content .photo-data .url-photo form {
-            display: flex;
-            margin: 10px; }
-          .container .main .content .photo-data .url-photo input[type=text], .container .main .content .photo-data .url-photo select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 10px 15px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            flex: 5; }
-          .container .main .content .photo-data .url-photo input[type=submit] {
-            width: 100px;
-            background-color: darkgray;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            flex: 1; }
-          .container .main .content .photo-data .url-photo input[type=submit]:hover {
-            background-color: dimgrey; }
-        .container .main .content .photo-data .photo-list {
-          flex: 1; }
-        .container .main .content .photo-data .photo-content {
+      height: 50px; }
+    .container .main .content .music-data {
+      height: 500px;
+      display: flex;
+      justify-content: center; }
+      .container .main .content .music-data .music-list {
+        width: 400px; }
+        .container .main .content .music-data .music-list .track-list {
           display: flex;
-          flex: 3; }
-          .container .main .content .photo-data .photo-content .photo-list {
-            flex: 1; }
-          .container .main .content .photo-data .photo-content .photo-li {
-            font-size: 20px;
-            font-family: 'Lobster', cursive;
-            margin: 10px; }
-          .container .main .content .photo-data .photo-content .photo {
-            flex: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
-            .container .main .content .photo-data .photo-content .photo .photo-size {
-              border: 1px solid #DDDDDD;
-              width: 350px;
-              height: 350px;
-              position: relative; }
-              .container .main .content .photo-data .photo-content .photo .photo-size .image {
-                width: 100%;
-                height: auto;
-                border: 5px solid darkgray;
-                position: absolute;
-                margin: auto;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                right: 0; }
+          align-items: center;
+          height: 50px; }
+      .container .main .content .music-data .music-content {
+        width: 400px; }
+        .container .main .content .music-data .music-content .music-image {
+          background-size: cover;
+          width: 380px;
+          height: 300px;
+          overflow: hidden; }
+        .container .main .content .music-data .music-content .music-play {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 99px; }
+    .container .main .content .film-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px; }
+    .container .main .content .film-data {
+      height: 500px;
+      display: flex;
+      justify-content: center; }
+    .container .main .content .photo-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px; }
+    .container .main .content .photo-data {
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .container .main .content .photo-data .url-photo {
+        flex: 0.3; }
+        .container .main .content .photo-data .url-photo form {
+          display: flex;
+          margin: 10px; }
+        .container .main .content .photo-data .url-photo input[type=text], .container .main .content .photo-data .url-photo select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 15px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          flex: 5; }
+        .container .main .content .photo-data .url-photo input[type=submit] {
+          width: 100px;
+          background-color: darkgray;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          flex: 1; }
+        .container .main .content .photo-data .url-photo input[type=submit]:hover {
+          background-color: dimgrey; }
+      .container .main .content .photo-data .photo-list {
+        flex: 1; }
+      .container .main .content .photo-data .photo-content {
+        display: flex;
+        flex: 3; }
+        .container .main .content .photo-data .photo-content .photo-list {
+          flex: 1; }
+        .container .main .content .photo-data .photo-content .photo-li {
+          font-size: 20px;
+          font-family: 'Lobster', cursive;
+          margin: 10px; }
+        .container .main .content .photo-data .photo-content .photo {
+          flex: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .container .main .content .photo-data .photo-content .photo .photo-size {
+            border: 1px solid #DDDDDD;
+            width: 350px;
+            height: 350px;
+            position: relative; }
+            .container .main .content .photo-data .photo-content .photo .photo-size .image {
+              width: 100%;
+              height: auto;
+              border: 5px solid darkgray;
+              position: absolute;
+              margin: auto;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              right: 0; }

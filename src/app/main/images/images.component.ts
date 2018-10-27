@@ -31,13 +31,10 @@ export class ImagesComponent implements IComponent
                               <input type="submit" id="submit" ">
                         </form>
                     </div>
-
                </div>             
                 <div class="photo-content">
                      <div class="photo-list">
-                           <ol class="photos" id="photos">
-                                                           
-                           </ol>                                                
+                           <ol class="photos" id="photos"></ol>                                                
                      </div>
                      <div class="photo">
                         <div class="photo-size">                                       

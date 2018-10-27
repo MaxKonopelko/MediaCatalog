@@ -1,29 +1,14 @@
-import { ImagesComponent } from './views/images/images.component';
-import { MusicsComponent } from './views/musics/musics.component';
-import { FilmsComponent } from './views/films/films.component';
+import { MainComponent } from './main/mainComponent';
+import { AuthComponent } from './auth/auth.component';
 
 export class AppComponent
 {
-  private imagesComponent = new ImagesComponent();
-  private musicsComponent = new MusicsComponent();
-  private filmsComponent = new FilmsComponent();
-  private components = [this.imagesComponent, this.musicsComponent, this.filmsComponent];
-
-  constructor()
-  {
-    const buttons = document.getElementsByClassName('b1');
-
-    for (let i = 0; i < buttons.length; i++)
-    {
-      buttons[i].addEventListener('click', () =>
-      {
-        this.render(i);
-      });
-    }
-  }
+  private _authComponent = new AuthComponent();
+  private _mainComponent = new MainComponent();
 
   public render(index: number): void
   {
-    document.getElementById('content').innerHTML = this.components[index].template();
+    document.getElementById('auth-root').innerHTML = this._authComponent.template();
+    document.getElementById('main-root').innerHTML = this._mainComponent.template();
   }
 }
