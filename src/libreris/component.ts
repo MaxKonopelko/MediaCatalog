@@ -1,21 +1,24 @@
 import { IComponent } from '../app/types';
 
-export function Component<TFunction extends Function>(target: TFunction): TFunction
+export function Component<TFunction extends Function>(oldConstructor: { new(): IComponent; }): any
 {
-  const newConstructor: Function = function (this: IComponent): void
+  return class extends oldConstructor
   {
-    this.template = function (): any
+    constructor()
     {
-      setTimeout(() => {
-        if (typeof target.prototype.onInit === 'function')
-        {
-          target.prototype.onInit.call(this);
-        }
-      }, 1);
+      super();
 
-      return target.prototype.template.call(this);
-    };
+      this.template = function (): any
+      {
+        setTimeout(() =>
+        {
+          if (typeof oldConstructor.prototype.onInit === 'function')
+          {
+            oldConstructor.prototype.onInit.call(this);
+          }
+        }, 1);
+        return oldConstructor.prototype.template.call(this);
+      };
+    }
   };
-  newConstructor.prototype = target.prototype;
-  return <TFunction>  newConstructor;
 }

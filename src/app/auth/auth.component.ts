@@ -1,7 +1,5 @@
 import { IComponent } from '../types';
-import { Component } from '../../libreris/component';
 
-@Component
 export class AuthComponent implements IComponent
 {
   public template(): string
