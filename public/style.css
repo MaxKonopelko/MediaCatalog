@@ -27,14 +27,16 @@ body {
 .container {
   width: 950px;
   max-width: 1000px; }
-  .container .main div {
-    border: 1px solid #ddd;
-    margin: 5px; }
-  .container .main .header {
+  .container .header {
     height: 100px;
     display: flex;
     justify-content: flex-end;
-    background: #fff; }
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 5px; }
+  .container .main div {
+    border: 1px solid #ddd;
+    margin: 5px; }
   .container .main .menu {
     height: 50px;
     display: flex;
@@ -100,16 +102,16 @@ body {
       align-items: center;
       height: 50px; }
     .container .main .content .photo-data {
-      height: 500px;
+      height: 600px;
       display: flex;
       justify-content: center;
       flex-direction: column; }
-      .container .main .content .photo-data .url-photo {
+      .container .main .content .photo-data .url-root {
         flex: 0.3; }
-        .container .main .content .photo-data .url-photo form {
+        .container .main .content .photo-data .url-root form {
           display: flex;
           margin: 10px; }
-        .container .main .content .photo-data .url-photo input[type=text], .container .main .content .photo-data .url-photo select {
+        .container .main .content .photo-data .url-root input[type=text], .container .main .content .photo-data .url-root select {
           width: 100%;
           padding: 12px 20px;
           margin: 10px 15px;
@@ -118,7 +120,7 @@ body {
           border-radius: 4px;
           box-sizing: border-box;
           flex: 5; }
-        .container .main .content .photo-data .url-photo input[type=submit] {
+        .container .main .content .photo-data .url-root input[type=submit] {
           width: 100px;
           background-color: darkgray;
           color: white;
@@ -128,30 +130,30 @@ body {
           border-radius: 4px;
           cursor: pointer;
           flex: 1; }
-        .container .main .content .photo-data .url-photo input[type=submit]:hover {
+        .container .main .content .photo-data .url-root input[type=submit]:hover {
           background-color: dimgrey; }
       .container .main .content .photo-data .photo-list {
         flex: 1; }
-      .container .main .content .photo-data .photo-content {
+      .container .main .content .photo-data .photo-root {
         display: flex;
         flex: 3; }
-        .container .main .content .photo-data .photo-content .photo-list {
+        .container .main .content .photo-data .photo-root .photo-list {
           flex: 1; }
-        .container .main .content .photo-data .photo-content .photo-li {
+        .container .main .content .photo-data .photo-root .photo-li {
           font-size: 20px;
           font-family: 'Lobster', cursive;
           margin: 10px; }
-        .container .main .content .photo-data .photo-content .photo {
+        .container .main .content .photo-data .photo-root .photo {
           flex: 2;
           display: flex;
           justify-content: center;
           align-items: center; }
-          .container .main .content .photo-data .photo-content .photo .photo-size {
+          .container .main .content .photo-data .photo-root .photo .photo-size {
             border: 1px solid #DDDDDD;
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
             position: relative; }
-            .container .main .content .photo-data .photo-content .photo .photo-size .image {
+            .container .main .content .photo-data .photo-root .photo .photo-size .image {
               width: 100%;
               height: auto;
               border: 5px solid darkgray;

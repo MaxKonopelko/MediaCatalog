@@ -25,18 +25,20 @@ body {
   width: 950px;
   max-width: 1000px;
 
+  .header {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 5px;
+  }
+
   .main {
 
     div {
       border: 1px solid #ddd;
       margin: 5px;
-    }
-
-    .header {
-      height: 100px;
-      display: flex;
-      justify-content: flex-end;
-      background: #fff;
     }
 
     .menu {
@@ -130,12 +132,12 @@ body {
         height: 50px;
       }
       .photo-data {
-        height: 500px;
+        height: 600px;
         display: flex;
         justify-content: center;
         flex-direction: column;
 
-        .url-photo {
+        .url-root {
           flex: 0.3;
 
           form {
@@ -175,7 +177,7 @@ body {
           flex: 1;
         }
 
-        .photo-content {
+        .photo-root {
           display: flex;
           flex: 3;
 
@@ -196,8 +198,8 @@ body {
             align-items: center;
               .photo-size{
                  border: 1px solid #DDDDDD;
-                 width: 350px;
-                 height: 350px;
+                 width: 300px;
+                 height: 300px;
                 position: relative;
 
 

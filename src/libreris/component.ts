@@ -7,7 +7,6 @@ export function Component<TFunction extends Function>(oldConstructor: { new(): I
     constructor()
     {
       super();
-
       this.template = function (): any
       {
         setTimeout(() =>

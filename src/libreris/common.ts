@@ -2,3 +2,9 @@ export function createCopy<T>(obj: T): T
 {
   return JSON.parse(JSON.stringify(obj));
 }
+
+export function imageUrlIsValid(str: string): boolean
+{
+  const myRegex = /(https?:\/\/.*\.(?:png|jpg))/i;
+  return myRegex.test(str);
+}

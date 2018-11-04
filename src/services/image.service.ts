@@ -1,15 +1,30 @@
 import { IImageModel } from '../models/models';
 import { StorageService } from './storage.service';
+import { imageUrlIsValid } from '../libreris/common';
 
 class ImageServiceClass
 {
   private storage = new StorageService<IImageModel>('image');
 
+  public get(): IImageModel[]
+  {
+    return this.storage.getObj();
+  }
+
   public add(item: IImageModel): void
   {
-    const imageList: IImageModel[] = this.storage.getObj();
-    imageList.push(item);
-    this.storage.addArray(imageList);
+    console.log(item.name.length);
+
+    if (item.name.length > 0 && imageUrlIsValid(item.link))
+    {
+      const imageList: IImageModel[] = this.storage.getObj();
+      imageList.push(item);
+      this.storage.addArray(imageList);
+    }
+    else
+    {
+      alert('Image Url Invalid');
+    }
   }
 
   public addArray(items: IImageModel[]): void
