@@ -5,6 +5,6 @@ export function createCopy<T>(obj: T): T
 
 export function imageUrlIsValid(str: string): boolean
 {
-  const myRegex = /(https?:\/\/.*\.(?:png|jpg))/i;
+  const myRegex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/i;
   return myRegex.test(str);
 }

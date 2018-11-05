@@ -19,10 +19,16 @@ export class ImagesListComponent implements IComponent
     images.forEach(image =>
     {
       str += `
-        <li class="photo-li"><strong>'Photo: ' + ${image.id}</strong> Name: ${image.name}</li>
+        <li class="photo-li"><strong>Photo: Id ${image.id}</strong> Name: ${image.name}</li>
       `;
     });
     photos.innerHTML = str;
+  }
+
+  public resetForm(): void
+  {
+    document.getElementById('url-photo')['value'] = '';
+    document.getElementById('url-name')['value'] = '';
   }
 
   public template(): string

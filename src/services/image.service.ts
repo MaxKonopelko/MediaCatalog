@@ -13,8 +13,6 @@ class ImageServiceClass
 
   public add(item: IImageModel): void
   {
-    console.log(item.name.length);
-
     if (item.name.length > 0 && imageUrlIsValid(item.link))
     {
       const imageList: IImageModel[] = this.storage.getObj();

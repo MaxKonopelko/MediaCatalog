@@ -24,8 +24,6 @@ export class ImagesUrlComponent implements IComponent
     event.preventDefault();
     const urlPhoto = document.getElementById('url-photo');
 
-    this._photoList.refresh();
-
     const image = {
       link: urlPhoto['value'],
       name: document.getElementById('url-name')['value'],
@@ -34,6 +32,8 @@ export class ImagesUrlComponent implements IComponent
     };
 
     ImageService.add(image);
+    this._photoList.refresh();
+    this._photoList.resetForm();
   };
 
   public template(): string

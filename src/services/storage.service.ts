@@ -34,7 +34,6 @@ export class StorageService<T extends IEntity>
         storageObj.index++;
       }
       this.browserStorage.setObject(storageObj);
-      console.log(storageObj);
     }
     else
     {
@@ -48,7 +47,6 @@ export class StorageService<T extends IEntity>
         }
       }
       this.browserStorage.setObject(storage);
-      console.log(storage);
     }
   }
 
