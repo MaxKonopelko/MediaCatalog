@@ -1,10 +1,13 @@
 import { IComponent } from '../../types';
 import { Component } from '../../../libreris/component';
 import { ImageService } from '../../../services/image.service';
+import { ImagesContentComponent } from './images-content.component';
 
 @Component
 export class ImagesListComponent implements IComponent
 {
+  private imagesContentComponent = new ImagesContentComponent;
+
   public onInit(): void
   {
     this.refresh();
@@ -19,10 +22,26 @@ export class ImagesListComponent implements IComponent
     images.forEach(image =>
     {
       str += `
-        <li class="photo-li"><strong>Photo: Id ${image.id}</strong> Name: ${image.name}</li>
+        <li id="photo-li" class="photo-li" data-id=${image.id}>
+          <strong>Photo:  </strong>
+          <span>${image.name}</span>
+          
+        </li>
       `;
     });
     photos.innerHTML = str;
+
+    this.liClickHandler(photos);
+  }
+
+  private liClickHandler(photos: HTMLElement): void
+  {
+    const arrLi = photos.querySelectorAll('li');
+
+    Array.from(arrLi).forEach((el, index) =>
+    {
+      el.addEventListener('click', () => this.imagesContentComponent.changeImage(index));
+    });
   }
 
   public resetForm(): void

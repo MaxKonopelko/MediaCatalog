@@ -139,28 +139,36 @@ body {
         flex: 4; }
         .container .main .content .photo-data .photo-root .photo-list {
           flex: 2;
-          overflow-x: auto; }
-        .container .main .content .photo-data .photo-root .photo-li {
-          font-size: 18px;
-          font-family: 'Lobster', cursive;
-          margin: 5px; }
-        .container .main .content .photo-data .photo-root .photo {
-          flex: 2;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
-          .container .main .content .photo-data .photo-root .photo .photo-size {
-            border: 1px solid #DDDDDD;
-            width: 300px;
-            height: 300px;
-            position: relative; }
-            .container .main .content .photo-data .photo-root .photo .photo-size .image {
-              width: 100%;
-              height: auto;
-              border: 5px solid darkgray;
-              position: absolute;
-              margin: auto;
-              left: 0;
-              top: 0;
-              bottom: 0;
-              right: 0; }
+          overflow-x: auto;
+          position: relative; }
+          .container .main .content .photo-data .photo-root .photo-list .photo-li {
+            margin: 5px;
+            border-bottom: 3px solid white; }
+          .container .main .content .photo-data .photo-root .photo-list .photo-li:hover {
+            background: darkgray;
+            border-bottom: 3px solid dimgray;
+            cursor: pointer; }
+      .container .main .content .photo-data .photo-li {
+        font-size: 18px;
+        font-family: 'Lobster', cursive;
+        margin: 5px; }
+      .container .main .content .photo-data .photo {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .container .main .content .photo-data .photo .photo-size {
+          border: 1px solid #DDDDDD;
+          width: 300px;
+          height: 300px;
+          position: relative; }
+          .container .main .content .photo-data .photo .photo-size .image {
+            width: 100%;
+            height: auto;
+            border: 5px solid darkgray;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0; }

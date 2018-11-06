@@ -8,8 +8,8 @@ import { MusicsComponent } from './musics/musics.component';
 export class MainComponent implements IComponent
 {
   private _imagesComponent = new ImagesComponent();
-  private _filmsComponent = new FilmsComponent();
   private _musicsComponent = new MusicsComponent();
+  private _filmsComponent = new FilmsComponent();
 
   public onInit(): void
   {
