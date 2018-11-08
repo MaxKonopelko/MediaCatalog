@@ -181,27 +181,49 @@ body {
           flex: 4;
 
           .photo-list {
-            flex: 2;
+            flex: 3;
             overflow-x: auto;
             position: relative;
 
-            .photo-li {
-              margin: 5px;
-              border-bottom: 3px solid white;
-            }
+            .photos {
 
-            .photo-li:hover{
-              background: darkgray;
-              border-bottom: 3px solid dimgray;
-              cursor: pointer;
+              .photo-li {
+                font-size: 18px;
+                font-family: 'Lobster', cursive;
+                margin: 10px;
+                transition: 2s;
+
+                .fa-close {
+                  display: none;
+                  float: right;
+                  right: 5px;
+                  cursor: pointer;
+                }
+
+                .photo-span:hover {
+                  border-bottom: 3px solid dimgray;
+                  cursor: pointer;
+                }
+
+                .photo-span {
+                  font-size: 18px;
+                  font-family: 'Lobster', cursive;
+                  margin: 10px;
+                  border-bottom: 3px solid white;
+                }
+
+                .fa-close:hover {
+                  transition: all .3s ease-out;
+                  transform: rotate(90deg);
+                }
+              }
+
+              .photo-li:hover .fa-close {
+                display: inline-block;
+              }
+
             }
           }
-        }
-
-        .photo-li {
-          font-size: 18px;
-          font-family: 'Lobster', cursive;
-          margin: 5px;
         }
 
         .photo {

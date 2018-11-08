@@ -2,11 +2,13 @@ import { Component } from '../../../libreris/component';
 import { ImagesListComponent } from './images-list.component';
 import { IComponent } from '../../types';
 import { ImageService } from '../../../services/image.service';
+import { ImagesContentComponent } from './images-content.component';
 
 @Component
 export class ImagesUrlComponent implements IComponent
 {
   private _photoList = new ImagesListComponent();
+  private _imagesContentComponent = new ImagesContentComponent();
 
   public onInit(): void
   {
@@ -16,7 +18,8 @@ export class ImagesUrlComponent implements IComponent
 
   public handleChange = () =>
   {
-    document.getElementById('image')['src'] = document.getElementById('url-photo')['value'];
+    const value = document.getElementById('url-photo')['value'];
+    this._imagesContentComponent.showImageByLink(value);
   };
 
   public handleSubmit = (event: Event) =>
@@ -33,8 +36,15 @@ export class ImagesUrlComponent implements IComponent
 
     ImageService.add(image);
     this._photoList.refresh();
-    this._photoList.resetForm();
+
+    this.resetForm();
   };
+
+  public resetForm(): void
+  {
+    document.getElementById('url-photo')['value'] = '';
+    document.getElementById('url-name')['value'] = '';
+  }
 
   public template(): string
   {

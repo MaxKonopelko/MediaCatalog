@@ -5,18 +5,19 @@ import { ImageService } from '../../../services/image.service';
 @Component
 export class ImagesContentComponent implements IComponent
 {
-
-  public changeImage(index: number): void
+  public showImageById(id: number): void
   {
-    const images = ImageService.get();
-    images.forEach(function (image)
-    {
-      if (image.id === index)
-      {
-        document.getElementById('image')['src'] = image.link;
-      }
-    });
+    document.getElementById('image')['src'] = ImageService.getId(id).link;
+  }
 
+  public showImageByLink(link: string): void
+  {
+    document.getElementById('image')['src'] = link;
+  }
+
+  public clear(): void
+  {
+    document.getElementById('image')['src'] = 'http://placehold.it/200x200';
   }
 
   public template(): string

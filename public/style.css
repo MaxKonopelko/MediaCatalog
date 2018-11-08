@@ -138,20 +138,32 @@ body {
         display: flex;
         flex: 4; }
         .container .main .content .photo-data .photo-root .photo-list {
-          flex: 2;
+          flex: 3;
           overflow-x: auto;
           position: relative; }
-          .container .main .content .photo-data .photo-root .photo-list .photo-li {
-            margin: 5px;
-            border-bottom: 3px solid white; }
-          .container .main .content .photo-data .photo-root .photo-list .photo-li:hover {
-            background: darkgray;
-            border-bottom: 3px solid dimgray;
-            cursor: pointer; }
-      .container .main .content .photo-data .photo-li {
-        font-size: 18px;
-        font-family: 'Lobster', cursive;
-        margin: 5px; }
+          .container .main .content .photo-data .photo-root .photo-list .photos .photo-li {
+            font-size: 18px;
+            font-family: 'Lobster', cursive;
+            margin: 10px;
+            transition: 2s; }
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close {
+              display: none;
+              float: right;
+              right: 5px;
+              cursor: pointer; }
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span:hover {
+              border-bottom: 3px solid dimgray;
+              cursor: pointer; }
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span {
+              font-size: 18px;
+              font-family: 'Lobster', cursive;
+              margin: 10px;
+              border-bottom: 3px solid white; }
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close:hover {
+              transition: all .3s ease-out;
+              transform: rotate(90deg); }
+          .container .main .content .photo-data .photo-root .photo-list .photos .photo-li:hover .fa-close {
+            display: inline-block; }
       .container .main .content .photo-data .photo {
         flex: 2;
         display: flex;

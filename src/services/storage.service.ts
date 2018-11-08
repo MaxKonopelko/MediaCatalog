@@ -16,6 +16,18 @@ export class StorageService<T extends IEntity>
     this.browserStorage = new BrowserStorage<IStorageModel<T>>(key);
   }
 
+  public getById(id: number): T
+  {
+    const objList: T[] = this.getObj();
+    return objList.find(x => x.id === id);
+  }
+
+  public getObj(): T[]
+  {
+    const browserStorageData = this.browserStorage.getObject();
+    return browserStorageData ? browserStorageData.list : [];
+  }
+
   public addArray(items: T[]): void
   {
     const storage = this.browserStorage.getObject();
@@ -50,10 +62,13 @@ export class StorageService<T extends IEntity>
     }
   }
 
-  public getObj(): T[]
+  public removeById(id: number): void
   {
-    const browserStorageData = this.browserStorage.getObject();
-    return browserStorageData ?  browserStorageData.list : [];
+    const objList = this.getObj();
+    const index = objList.findIndex(x => (x.id === id));
+    objList.splice(index, 1);
+    this.browserStorage.clear();
+    this.addArray(objList);
   }
 
   public clear(): void
