@@ -190,8 +190,9 @@ body {
               .photo-li {
                 font-size: 18px;
                 font-family: 'Lobster', cursive;
-                margin: 10px;
+                margin: 10px 10px 10px 0;
                 transition: 2s;
+                list-style-type: none;
 
                 .fa-close {
                   display: none;

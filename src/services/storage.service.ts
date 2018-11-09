@@ -64,11 +64,12 @@ export class StorageService<T extends IEntity>
 
   public removeById(id: number): void
   {
-    const objList = this.getObj();
-    const index = objList.findIndex(x => (x.id === id));
-    objList.splice(index, 1);
-    this.browserStorage.clear();
-    this.addArray(objList);
+    const storageObj = this.browserStorage.getObject();
+    const index = storageObj.list.findIndex(x => (x.id === id));
+    storageObj.list.splice(index, 1);
+
+    this.clear();
+    this.browserStorage.setObject(storageObj);
   }
 
   public clear(): void

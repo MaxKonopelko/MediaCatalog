@@ -23,28 +23,30 @@ export class ImagesListComponent implements IComponent
     {
       str += `
              <li id="photo-li" class="photo-li" data-id=${image.id}>
-                <span id="photo-span" data-id=${image.id} class="photo-span" ><strong>Photo:  </strong> ${image.name}
+                <span id="photo-span" class="photo-span" ><strong>${image.id}. Photo: </strong> ${image.name}
                 </span>
-                <i id='fa-close' class="fa fa-close" data-id=${image.id} style="font-size:24px"></i>
+                <i id='fa-close' class="fa fa-close" style="font-size:24px"></i>
              </li>
       `;
     });
     photos.innerHTML = str;
 
-    this.addLiClickHandler(photos);
+    this.addSpanClickHandler(photos);
     this.addIClickHandler(photos);
   }
 
-  private addLiClickHandler = (photos: HTMLElement) =>
+  private addSpanClickHandler = (photos: HTMLElement) =>
   {
-    const liCollection = photos.querySelectorAll('span');
-    const listArray = Array.from(liCollection);
+    const spanCollection = photos.querySelectorAll('span');
+    const listArray = Array.from(spanCollection);
 
     listArray.forEach(spanElement =>
     {
       spanElement.addEventListener('click', () =>
       {
-        const id = parseInt(spanElement.dataset.id);
+        const parent = spanElement.parentElement;
+        const id = parseInt(parent.dataset.id);
+        console.log('id image Span click', id);
         this.imagesContentComponent.showImageById(id);
         this.refresh();
       });
@@ -60,7 +62,9 @@ export class ImagesListComponent implements IComponent
     {
       iElement.addEventListener('click', () =>
       {
-        const id = parseInt(iElement.dataset.id);
+        const parent = iElement.parentElement;
+        const id = parseInt(parent.dataset.id);
+        console.log('id image @i@ click', id);
         ImageService.removeById(id);
         this.refresh();
         this.imagesContentComponent.clear();
@@ -72,7 +76,7 @@ export class ImagesListComponent implements IComponent
   {
     return `
               <div class="photo-list">
-                     <ol class="photos" id="photos"></ol>
+                     <ul class="photos" id="photos"></ul>
                </div>       
             `;
   }

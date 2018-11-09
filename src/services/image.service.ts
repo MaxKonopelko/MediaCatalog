@@ -26,7 +26,12 @@ class ImageServiceClass
     }
     else
     {
+      const element = document.createElement('url-photo');
+      element.style.width = "100px";
+
       alert('Image Url Invalid');
+
+      // TODO
     }
   }
 
