@@ -18,19 +18,22 @@ class ImageServiceClass
 
   public add(item: IImageModel): void
   {
+    const element = document.getElementById('url-photo');
+
     if (item.name.length > 0 && imageUrlIsValid(item.link))
     {
+      element.style.border = '1px solid #ccc';
+
       const imageList: IImageModel[] = this.storage.getObj();
       imageList.push(item);
       this.storage.addArray(imageList);
     }
     else
     {
-      const element = document.createElement('url-photo');
-      element.style.width = "100px";
+      element.style.border = '2px solid crimson';
+      element.style.transition = '1s';
 
       alert('Image Url Invalid');
-
       // TODO
     }
   }

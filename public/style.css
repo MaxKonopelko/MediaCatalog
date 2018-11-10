@@ -28,14 +28,114 @@ body {
   width: 950px;
   max-width: 1000px; }
   .container .header {
-    height: 100px;
+    height: 140px;
     display: flex;
     justify-content: flex-end;
-    background: #fff;
     border: 1px solid #ddd;
-    margin: 5px; }
+    margin: 5px;
+    background-image: -webkit-radial-gradient(center center, #454f56, #1d2124); }
+    .container .header .f-left {
+      float: left; }
+    .container .header .f-right {
+      float: right; }
+    .container .header .title {
+      width: 200px;
+      margin: 0 auto;
+      margin-top: 120px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: White;
+      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      font-family: "Roboto Condensed"; }
+      .container .header .title span:first-child {
+        color: #A1C72C; }
+    .container .header #login {
+      width: 200px;
+      float: right;
+      margin-top: 5px;
+      margin-right: 5px; }
+    .container .header fieldset {
+      border: none;
+      padding: 0; }
+    .container .header .alert {
+      text-align: center;
+      margin-bottom: 5px;
+      color: #ff8080;
+      text-shadow: 0 0 10px red;
+      margin-left: 0; }
+    .container .header input[type=password], .container .header input[type=text], .container .header input[type=email] {
+      background: #10548C;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #343b40;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 0.8em;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 200;
+      padding: 10px 40px 10px 10px;
+      margin-bottom: 10px;
+      width: 100%; }
+    .container .header input[type=email], .container .header input[type=password] {
+      background: #5c6972; }
+    .container .header #login fieldset {
+      position: relative; }
+    .container .header i {
+      content: '\f007';
+      font-family: 'font-awesome';
+      font-size: 26px;
+      color: #73838e;
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      width: 20px;
+      height: 20px; }
+    .container .header input[type=submit] {
+      border-radius: 5px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      border: solid 1px #A1C72C;
+      color: #454F56;
+      font-size: 0.8em;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 500;
+      padding: 8px 30px;
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5); }
+      .container .header input[type=submit]:hover {
+        box-shadow: 0 0 5px rgba(161, 199, 44, 0.8); }
+      .container .header input[type=submit]:active {
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4); }
+    .container .header input::-webkit-input-placeholder {
+      color: #dbf2ff; }
+    .container .header input:-moz-placeholder {
+      color: #dbf2ff; }
+    .container .header input:-ms-input-placeholder {
+      color: #dbf2ff; }
+    .container .header label {
+      font-size: 0.7em;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      width: 100px;
+      left: 35px;
+      top: 14px; }
+    .container .header input[type=checkbox] {
+      background: #10548C;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #343b40;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      margin-top: 12px; }
+    .container .header input:focus {
+      border: 1px solid rgba(161, 199, 44, 0.6);
+      box-shadow: 0 0 5px rgba(161, 199, 44, 0.6);
+      outline: none; }
   .container .main div {
-    border: 1px solid #ddd;
     margin: 5px; }
   .container .main .menu {
     height: 50px;
@@ -45,7 +145,8 @@ body {
     font-size: 36px;
     font-family: 'Lobster', cursive;
     justify-content: center;
-    text-align: center; }
+    text-align: center;
+    border: 1px solid #ddd; }
     .container .main .menu div:hover {
       box-shadow: inset 0 0 0 2px #53ea93;
       transition: 1s;
@@ -59,16 +160,20 @@ body {
   .container .main .content {
     height: 700px;
     justify-content: center;
-    background: #fff; }
+    background: #fff;
+    border: 1px solid #ddd; }
     .container .main .content .music-header {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50px; }
+      height: 50px;
+      font-size: 24px;
+      font-family: 'Lobster', cursive; }
     .container .main .content .music-data {
       height: 500px;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      border: 5px solid #f2f2f2; }
       .container .main .content .music-data .music-list {
         width: 400px; }
         .container .main .content .music-data .music-list .track-list {
@@ -91,85 +196,139 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50px; }
+      height: 50px;
+      font-size: 24px;
+      font-family: 'Lobster', cursive; }
     .container .main .content .film-data {
       height: 500px;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      border: 5px solid #f2f2f2; }
     .container .main .content .photo-header {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50px; }
+      height: 50px;
+      font-size: 24px;
+      font-family: 'Lobster', cursive; }
     .container .main .content .photo-data {
       height: 600px;
       display: flex;
       justify-content: center;
-      flex-direction: column; }
+      flex-direction: column;
+      background-color: #f2f2f2; }
       .container .main .content .photo-data .url-root {
-        flex: 0.3; }
+        flex: 0.3;
+        background: #fff;
+        /* necessary to give position: relative to parent. */ }
+        .container .main .content .photo-data .url-root :focus {
+          outline: none; }
+        .container .main .content .photo-data .url-root .col-3 {
+          float: left;
+          width: 33.33%;
+          margin: 10px 1%;
+          position: relative; }
+        .container .main .content .photo-data .url-root input[type="text"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .photo-data .url-root input[type="submit"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .photo-data .url-root .effect-7 {
+          border: 1px solid #ccc;
+          padding: 7px 14px 9px;
+          transition: 0.4s; }
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border:before,
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #3399FF;
+          transition: 0.4s; }
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border:after {
+          top: auto;
+          bottom: 0; }
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border i:before,
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border i:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 2px;
+          height: 0;
+          background-color: #3399FF;
+          transition: 0.6s; }
+        .container .main .content .photo-data .url-root .effect-7 ~ .focus-border i:after {
+          left: auto;
+          right: 0; }
+        .container .main .content .photo-data .url-root .effect-7:focus ~ .focus-border:before,
+        .container .main .content .photo-data .url-root .effect-7:focus ~ .focus-border:after {
+          left: 0;
+          width: 100%;
+          transition: 0.4s; }
+        .container .main .content .photo-data .url-root .effect-7:focus ~ .focus-border i:before,
+        .container .main .content .photo-data .url-root .effect-7:focus ~ .focus-border i:after {
+          top: 0;
+          height: 100%;
+          transition: 0.6s; }
         .container .main .content .photo-data .url-root form {
           display: flex;
           margin: 10px; }
-        .container .main .content .photo-data .url-root input[type=text], .container .main .content .photo-data .url-root select {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 10px 15px;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          flex: 5; }
-        .container .main .content .photo-data .url-root input[type=submit] {
-          width: 100px;
-          background-color: darkgray;
-          color: white;
-          padding: 14px 20px;
-          margin: 8px 0;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          flex: 1; }
-        .container .main .content .photo-data .url-root input[type=submit]:hover {
-          background-color: dimgrey; }
       .container .main .content .photo-data .photo-list {
         flex: 1; }
-      .container .main .content .photo-data .photo-root {
+      .container .main .content .photo-data .photo-content {
         display: flex;
-        flex: 4; }
-        .container .main .content .photo-data .photo-root .photo-list {
+        flex: 4;
+        background: #fff;
+        margin-top: 0; }
+        .container .main .content .photo-data .photo-content .photo-content {
+          display: flex;
+          flex: 4;
+          background: #fff;
+          margin-top: 0;
+          border-right: 5px solid #f2f2f2; }
+        .container .main .content .photo-data .photo-content .photo-list {
           flex: 3;
           overflow-x: auto;
           position: relative; }
-          .container .main .content .photo-data .photo-root .photo-list .photos .photo-li {
+          .container .main .content .photo-data .photo-content .photo-list .photos .photo-li {
             font-size: 18px;
             font-family: 'Lobster', cursive;
             margin: 10px 10px 10px 0;
-            transition: 2s;
+            transition: 1s;
             list-style-type: none; }
-            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close {
+            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .fa-close {
               display: none;
               float: right;
-              right: 5px;
+              right: 10px;
               cursor: pointer; }
-            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span:hover {
+            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .photo-span:hover {
               border-bottom: 3px solid dimgray;
               cursor: pointer; }
-            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span {
+            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .photo-span {
               font-size: 18px;
               font-family: 'Lobster', cursive;
-              margin: 10px;
               border-bottom: 3px solid white; }
-            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close:hover {
+            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .fa-close:hover {
               transition: all .3s ease-out;
               transform: rotate(90deg); }
-          .container .main .content .photo-data .photo-root .photo-list .photos .photo-li:hover .fa-close {
+          .container .main .content .photo-data .photo-content .photo-list .photos .photo-li:hover .fa-close {
             display: inline-block; }
+          .container .main .content .photo-data .photo-content .photo-list .photos .photo-li:hover {
+            background: #dddddd; }
       .container .main .content .photo-data .photo {
         flex: 2;
         display: flex;
-        justify-content: center;
-        align-items: center; }
+        justify-content: center; }
         .container .main .content .photo-data .photo .photo-size {
           border: 1px solid #DDDDDD;
           width: 300px;

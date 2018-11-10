@@ -50,12 +50,35 @@ export class ImagesUrlComponent implements IComponent
   {
     return `
                <div>  
-                    <div>
-                        <form id="form-image">
+                    <div class="form-url">
+                        <form id="form-image" class="form">
                               <!--<label for="fname">URL IMAGE </label>-->
-                              <input type="text" id="url-photo" placeholder="Url image..">
-                              <input type="text" id="url-name" value="" placeholder="Image name..">                    
-                              <input type="submit" id="submit" value="Save">
+                              <!--<input type="text" id="url-photo" class="effect-7" placeholder="Url image..">-->
+                              <!--<span class="focus-border">-->
+                                <!--<i></i>-->
+                              <!--</span>-->
+                              <!--<input type="text" id="url-name" class="effect-7" value="" placeholder="Image name..">                    -->
+                              <!--<input type="submit" id="submit" value="Save">-->
+                              
+                              <div class="col-3">
+                              <input class="effect-7" id="url-photo" type="text" placeholder="Url image..">
+                                  <span class="focus-border">
+                                    <i></i>
+                                  </span>
+                              </div>
+                              <div class="col-3">
+                                  <input class="effect-7" id="url-name"  type="text" placeholder="Image name..">
+                                    <span class="focus-border">
+                                      <i></i>
+                                    </span>
+                              </div>
+                              <div class="col-3">
+                                <input class="effect-7" id="submit" type="submit" value="Save">
+                                  <span class="focus-border">
+                                    <i></i>
+                                  </span>
+                              </div>
+        
                         </form>
                     </div>
                </div>    
