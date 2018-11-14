@@ -36,6 +36,7 @@ export class ImagesUrlComponent implements IComponent
 
     ImageService.add(image);
     this._photoList.refresh();
+    this._photoList.activateElement();
 
     this.resetForm();
   };

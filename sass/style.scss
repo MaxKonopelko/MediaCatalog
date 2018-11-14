@@ -34,7 +34,7 @@ body {
   max-width: 1000px;
 
   .header {
-    height: 140px;
+    height: 150px;
     display: flex;
     justify-content: flex-end;
     //background: #fff;
@@ -111,12 +111,12 @@ body {
     }
     i {
       content: '\f007';
-      font-family: 'font-awesome';
+      //font-family: 'font-awesome';
       font-size: 26px;
       color: lighten($bg2, 20);
       position: absolute;
       right: 12px;
-      top: 10px;
+      top: 5px;
       width: 20px;
       height: 20px;
       //color: White;
@@ -163,7 +163,7 @@ body {
       position: absolute;
       width: 100px;
       left: 35px;
-      top: 14px;
+      top: 10px;
     }
 
     input[type=checkbox] {
@@ -175,7 +175,6 @@ body {
       color: #fff;
       width: 20px;
       height: 20px;
-      margin-top: 12px;
     }
 
     input:focus {
@@ -377,19 +376,27 @@ body {
             border-right: 5px solid #f2f2f2;
           }
 
+          .newSpan {
+            background: #333333;
+            color: #FFF;
+            font-size: 24px;
+            font-family: cursive;
+          }
+
           .photo-list {
             flex: 3;
             overflow-x: auto;
             position: relative;
 
             .photos {
+              padding: 0px 20px 10px 20px;
 
               .photo-li {
                 font-size: 18px;
                 font-family: 'Lobster', cursive;
-                margin: 10px 10px 10px 0;
-                transition: 1s;
+                transition: 1.5s;
                 list-style-type: none;
+                padding: 10px;
 
                 .fa-close {
                   display: none;
@@ -402,11 +409,11 @@ body {
                   border-bottom: 3px solid dimgray;
                   cursor: pointer;
                 }
-
+                ///TODO
                 .photo-span {
                   font-size: 18px;
                   font-family: 'Lobster', cursive;
-                  border-bottom: 3px solid white;
+                  //border-bottom: 3px solid white;
                 }
 
                 .fa-close:hover {
@@ -420,7 +427,7 @@ body {
               }
 
               .photo-li:hover {
-                background: #dddddd;
+                //background: dimgray;
               }
             }
           }
@@ -433,7 +440,6 @@ body {
           //align-items: center;
 
           .photo-size {
-            border: 1px solid #DDDDDD;
             width: 300px;
             height: 300px;
             position: relative;

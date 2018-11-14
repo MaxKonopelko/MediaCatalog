@@ -5,7 +5,7 @@ export class MusicsComponent implements IComponent
   public template(): string
   {
     return `
-            <div class="music-header">Name track</div>
+            <div class="music-header">Music</div>
             <div class="music-data">
                 <div class="music-list">
                     <div class="track-list">1</div>

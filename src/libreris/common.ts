@@ -8,3 +8,8 @@ export function imageUrlIsValid(str: string): boolean
   const myRegex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/i;
   return myRegex.test(str);
 }
+
+export function isExistHtmlInDOM(element: HTMLElement)
+{
+  return document.body.contains(element);
+}

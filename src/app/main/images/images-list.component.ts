@@ -7,6 +7,7 @@ import { ImagesContentComponent } from './images-content.component';
 export class ImagesListComponent implements IComponent
 {
   private imagesContentComponent = new ImagesContentComponent();
+  private activeId: number;
 
   public onInit(): void
   {
@@ -46,11 +47,20 @@ export class ImagesListComponent implements IComponent
       {
         const parent = spanElement.parentElement;
         const id = parseInt(parent.dataset.id);
-        console.log('id image Span click', id);
+        this.activeId = id;
         this.imagesContentComponent.showImageById(id);
         this.refresh();
+        this.activateElement();
       });
     });
+  };
+
+  public activateElement = () =>
+  {
+    const liCollection = document.querySelectorAll('.photos li');
+    const listLi = Array.from(liCollection);
+    const liElem = listLi.find(le => parseInt(le.getAttribute('data-id')) === this.activeId);
+    liElem.classList.add('newSpan');
   };
 
   public addIClickHandler = (photos: HTMLElement) =>
