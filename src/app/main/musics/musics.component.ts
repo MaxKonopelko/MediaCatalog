@@ -1,34 +1,30 @@
 import { IComponent } from '../../types';
+import { Component } from '../../../libreris/component';
+import { MusicsUrlComponent } from './musics-url.component';
+import { MusicsListComponent } from './musics-list.component';
+import { MusicsContentComponent } from './musics-content.component';
 
+@Component
 export class MusicsComponent implements IComponent
 {
+  private _urlComponent = new MusicsUrlComponent();
+  private _musicList = new MusicsListComponent();
+  private _musicContentComponent = new MusicsContentComponent();
+
+  public onInit(): void
+  {
+    document.getElementById('url-root').innerHTML += this._urlComponent.template();
+    document.getElementById('music-root').innerHTML += this._musicList.template();
+    document.getElementById('music-root').innerHTML += this._musicContentComponent.template();
+  }
+
   public template(): string
   {
     return `
             <div class="music-header">Music</div>
             <div class="music-data">
-                <div class="music-list">
-                    <div class="track-list">1</div>
-                    <div class="track-list">2</div>
-                    <div class="track-list">3</div>
-                    <div class="track-list">4</div>
-                    <div class="track-list">5</div>
-                    <div class="track-list">6</div>
-                    <div class="track-list">7</div>
-                </div>
-                <div class="music-content">
-                    <div class="music-image">
-                        <img src="images/guf.jpg">
-                    </div>
-                    <div class="music-author">Name : Guf</div>
-                    <div class="music-name">Track name : Azino777</div>
-                    <div class="music-play">
-                        <audio controls>
-                            <source type="audio/mpeg" src="images/142.mp3">
-                        </audio>
-                    </div>
-
-                </div>
+                <div id="url-root" class="url-root"></div>    
+                <div id="music-root" class="music-root"></div>
             </div>
     `;
   }

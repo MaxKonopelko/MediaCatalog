@@ -1,7 +1,6 @@
 import { Component } from '../../../libreris/component';
 import { ImagesListComponent } from './images-list.component';
 import { IComponent } from '../../types';
-import { ImageService } from '../../../services/image.service';
 import { ImagesContentComponent } from './images-content.component';
 
 @Component
@@ -34,10 +33,7 @@ export class ImagesUrlComponent implements IComponent
       top: '',
     };
 
-    ImageService.add(image);
-    this._photoList.refresh();
-    this._photoList.activateElement();
-
+    this._photoList.add(image);
     this.resetForm();
   };
 
@@ -49,18 +45,9 @@ export class ImagesUrlComponent implements IComponent
 
   public template(): string
   {
-    return `
-               <div>  
+    return `        
                     <div class="form-url">
                         <form id="form-image" class="form">
-                              <!--<label for="fname">URL IMAGE </label>-->
-                              <!--<input type="text" id="url-photo" class="effect-7" placeholder="Url image..">-->
-                              <!--<span class="focus-border">-->
-                                <!--<i></i>-->
-                              <!--</span>-->
-                              <!--<input type="text" id="url-name" class="effect-7" value="" placeholder="Image name..">                    -->
-                              <!--<input type="submit" id="submit" value="Save">-->
-                              
                               <div class="col-3">
                               <input class="effect-7" id="url-photo" type="text" placeholder="Url image..">
                                   <span class="focus-border">
@@ -79,10 +66,8 @@ export class ImagesUrlComponent implements IComponent
                                     <i></i>
                                   </span>
                               </div>
-        
                         </form>
-                    </div>
-               </div>    
+                    </div>          
     `;
   }
 }

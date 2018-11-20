@@ -31,8 +31,7 @@ body {
     height: 150px;
     display: flex;
     justify-content: flex-end;
-    border: 1px solid #ddd;
-    margin: 5px;
+    margin: 0px 5px 0px 5px;
     background-image: -webkit-radial-gradient(center center, #454f56, #1d2124); }
     .container .header .f-left {
       float: left; }
@@ -46,7 +45,7 @@ body {
       font-size: 26px;
       font-weight: 700;
       color: White;
-      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       font-family: "Roboto Condensed"; }
       .container .header .title span:first-child {
         color: #A1C72C; }
@@ -168,28 +167,122 @@ body {
       font-size: 24px;
       font-family: 'Lobster', cursive; }
     .container .main .content .music-data {
-      height: 500px;
+      height: 600px;
       display: flex;
-      justify-content: center;
-      border: 5px solid #f2f2f2; }
-      .container .main .content .music-data .music-list {
-        width: 400px; }
-        .container .main .content .music-data .music-list .track-list {
-          display: flex;
-          align-items: center;
-          height: 50px; }
-      .container .main .content .music-data .music-content {
-        width: 400px; }
-        .container .main .content .music-data .music-content .music-image {
-          background-size: cover;
-          width: 380px;
-          height: 300px;
-          overflow: hidden; }
-        .container .main .content .music-data .music-content .music-play {
+      flex-direction: column;
+      background-color: #f2f2f2; }
+      .container .main .content .music-data .url-root {
+        flex: 0.3;
+        background: #fff;
+        /* necessary to give position: relative to parent. */ }
+        .container .main .content .music-data .url-root :focus {
+          outline: none; }
+        .container .main .content .music-data .url-root .col-3 {
+          float: left;
+          width: 33.33%;
+          margin: 10px 1%;
+          position: relative; }
+        .container .main .content .music-data .url-root input[type="text"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .music-data .url-root input[type="submit"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .music-data .url-root .effect-7 {
+          border: 1px solid #ccc;
+          padding: 7px 14px 9px;
+          transition: 0.4s; }
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border:before,
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #3399FF;
+          transition: 0.4s; }
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border:after {
+          top: auto;
+          bottom: 0; }
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border i:before,
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border i:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 2px;
+          height: 0;
+          background-color: #3399FF;
+          transition: 0.6s; }
+        .container .main .content .music-data .url-root .effect-7 ~ .focus-border i:after {
+          left: auto;
+          right: 0; }
+        .container .main .content .music-data .url-root .effect-7:focus ~ .focus-border:before,
+        .container .main .content .music-data .url-root .effect-7:focus ~ .focus-border:after {
+          left: 0;
+          width: 100%;
+          transition: 0.4s; }
+        .container .main .content .music-data .url-root .effect-7:focus ~ .focus-border i:before,
+        .container .main .content .music-data .url-root .effect-7:focus ~ .focus-border i:after {
+          top: 0;
+          height: 100%;
+          transition: 0.6s; }
+      .container .main .content .music-data form {
+        display: flex;
+        margin: 10px; }
+      .container .main .content .music-data .music-root {
+        display: flex;
+        background: #fff;
+        flex: 4;
+        margin-top: 0; }
+        .container .main .content .music-data .music-root .music-list {
+          flex: 2;
+          border-right: 5px solid #f2f2f2;
+          margin: 0 5px 0 5px; }
+          .container .main .content .music-data .music-root .music-list .music-ul {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            flex-direction: column; }
+            .container .main .content .music-data .music-root .music-list .music-ul .music-li {
+              font-size: 18px;
+              font-family: 'Lobster', cursive;
+              transition: 1.5s;
+              list-style-type: none;
+              padding: 10px; }
+        .container .main .content .music-data .music-root .music-content {
+          flex: 3;
+          margin: 0 5px 0 5px;
           display: flex;
           justify-content: center;
-          align-items: center;
-          height: 99px; }
+          align-items: center; }
+          .container .main .content .music-data .music-root .music-content .music-block {
+            flex-direction: column;
+            font-size: 24px;
+            font-family: 'Lobster', cursive; }
+            .container .main .content .music-data .music-root .music-content .music-block .music-image {
+              background-size: cover;
+              overflow: hidden;
+              width: 70%;
+              display: flex;
+              height: 70%;
+              margin: 0 auto; }
+              .container .main .content .music-data .music-root .music-content .music-block .music-image img {
+                padding: 10px; }
+            .container .main .content .music-data .music-root .music-content .music-block .music-play {
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .container .main .content .music-data .music-root .music-content .music-block .music-play audio {
+                background-color: #1d2124;
+                flex: 1; }
     .container .main .content .film-header {
       display: flex;
       justify-content: center;
@@ -283,57 +376,58 @@ body {
           margin: 10px; }
       .container .main .content .photo-data .photo-list {
         flex: 1; }
-      .container .main .content .photo-data .photo-content {
+      .container .main .content .photo-data .photo-root {
         display: flex;
         flex: 4;
         background: #fff;
         margin-top: 0; }
-        .container .main .content .photo-data .photo-content .photo-content {
+        .container .main .content .photo-data .photo-root .photo-content {
           display: flex;
           flex: 4;
           background: #fff;
-          margin-top: 0;
+          margin: 0 5px 0 5px;
           border-right: 5px solid #f2f2f2; }
-        .container .main .content .photo-data .photo-content .newSpan {
+        .container .main .content .photo-data .photo-root .newSpan {
           background: #333333;
           color: #FFF;
           font-size: 24px;
           font-family: cursive; }
-        .container .main .content .photo-data .photo-content .photo-list {
+        .container .main .content .photo-data .photo-root .photo-list {
           flex: 3;
           overflow-x: auto;
           position: relative; }
-          .container .main .content .photo-data .photo-content .photo-list .photos {
-            padding: 0px 20px 10px 20px; }
-            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li {
+          .container .main .content .photo-data .photo-root .photo-list .photos {
+            padding: 0 20px 10px 20px; }
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li {
               font-size: 18px;
               font-family: 'Lobster', cursive;
               transition: 1.5s;
               list-style-type: none;
               padding: 10px; }
-              .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .fa-close {
+              .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close {
                 display: none;
                 float: right;
                 right: 10px;
                 cursor: pointer; }
-              .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .photo-span:hover {
+              .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span:hover {
                 border-bottom: 3px solid dimgray;
                 cursor: pointer; }
-              .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .photo-span {
+              .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span {
                 font-size: 18px;
                 font-family: 'Lobster', cursive; }
-              .container .main .content .photo-data .photo-content .photo-list .photos .photo-li .fa-close:hover {
+              .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close:hover {
                 transition: all .3s ease-out;
                 transform: rotate(90deg); }
-            .container .main .content .photo-data .photo-content .photo-list .photos .photo-li:hover .fa-close {
+            .container .main .content .photo-data .photo-root .photo-list .photos .photo-li:hover .fa-close {
               display: inline-block; }
       .container .main .content .photo-data .photo {
         flex: 2;
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        align-items: center;
+        overflow: scroll; }
         .container .main .content .photo-data .photo .photo-size {
-          width: 300px;
-          height: 300px;
+          width: 400px;
           position: relative; }
           .container .main .content .photo-data .photo .photo-size .image {
             width: 100%;

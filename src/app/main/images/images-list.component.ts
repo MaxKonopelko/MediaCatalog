@@ -8,10 +8,19 @@ export class ImagesListComponent implements IComponent
 {
   private imagesContentComponent = new ImagesContentComponent();
   private activeId: number;
+  private buffer: number;
 
   public onInit(): void
   {
     this.refresh();
+  }
+
+  public add(image: object): void
+  {
+    ImageService.add(image);
+    this.refresh();
+    this.activeId = this.buffer;
+    this.activateElement();
   }
 
   public refresh(): void
@@ -22,6 +31,8 @@ export class ImagesListComponent implements IComponent
 
     images.forEach(image =>
     {
+      console.log('this.activeId', this.activeId);
+      this.buffer = image.id;
       str += `
              <li id="photo-li" class="photo-li" data-id=${image.id}>
                 <span id="photo-span" class="photo-span" ><strong>${image.id}. Photo: </strong> ${image.name}
@@ -57,6 +68,7 @@ export class ImagesListComponent implements IComponent
 
   public activateElement = () =>
   {
+    console.log('activateElement', this.activeId);
     const liCollection = document.querySelectorAll('.photos li');
     const listLi = Array.from(liCollection);
     const liElem = listLi.find(le => parseInt(le.getAttribute('data-id')) === this.activeId);
@@ -74,7 +86,6 @@ export class ImagesListComponent implements IComponent
       {
         const parent = iElement.parentElement;
         const id = parseInt(parent.dataset.id);
-        console.log('id image @i@ click', id);
         ImageService.removeById(id);
         this.refresh();
         this.imagesContentComponent.clear();

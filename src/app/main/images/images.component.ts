@@ -24,7 +24,7 @@ export class ImagesComponent implements IComponent
             <div class="photo-header">Photo Gallery</div>
             <div id="photo-data" class="photo-data"> 
                  <div id="url-root" class="url-root"></div>          
-                 <div id="photo-root" class="photo-content"></div>     
+                 <div id="photo-root" class="photo-root"></div>     
             </div>
     `;
   }
