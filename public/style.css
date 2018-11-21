@@ -245,18 +245,36 @@ body {
         .container .main .content .music-data .music-root .music-list {
           flex: 2;
           border-right: 5px solid #f2f2f2;
-          margin: 0 5px 0 5px; }
+          margin: 0 5px 0 5px;
+          overflow-x: auto;
+          position: relative; }
           .container .main .content .music-data .music-root .music-list .music-ul {
-            display: flex;
-            align-items: center;
-            height: 50px;
-            flex-direction: column; }
+            padding: 0 20px 10px 20px; }
             .container .main .content .music-data .music-root .music-list .music-ul .music-li {
               font-size: 18px;
               font-family: 'Lobster', cursive;
               transition: 1.5s;
               list-style-type: none;
               padding: 10px; }
+              .container .main .content .music-data .music-root .music-list .music-ul .music-li .fa-close {
+                display: none;
+                float: right;
+                right: 10px;
+                cursor: pointer; }
+              .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span:hover {
+                border-bottom: 3px solid dimgray;
+                cursor: pointer; }
+              .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span {
+                font-size: 18px;
+                font-family: 'Lobster', cursive; }
+                .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span .span-strong {
+                  font-size: 19px;
+                  letter-spacing: 1px; }
+              .container .main .content .music-data .music-root .music-list .music-ul .music-li .fa-close:hover {
+                transition: all .3s ease-out;
+                transform: rotate(90deg); }
+            .container .main .content .music-data .music-root .music-list .music-ul .music-li:hover .fa-close {
+              display: inline-block; }
         .container .main .content .music-data .music-root .music-content {
           flex: 3;
           margin: 0 5px 0 5px;
@@ -283,6 +301,11 @@ body {
               .container .main .content .music-data .music-root .music-content .music-block .music-play audio {
                 background-color: #1d2124;
                 flex: 1; }
+      .container .main .content .music-data .newSpan {
+        background: #333333;
+        color: #FFF;
+        font-size: 24px;
+        font-family: cursive; }
     .container .main .content .film-header {
       display: flex;
       justify-content: center;
@@ -415,6 +438,9 @@ body {
               .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span {
                 font-size: 18px;
                 font-family: 'Lobster', cursive; }
+                .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .photo-span .span-strong {
+                  font-size: 19px;
+                  letter-spacing: 1px; }
               .container .main .content .photo-data .photo-root .photo-list .photos .photo-li .fa-close:hover {
                 transition: all .3s ease-out;
                 transform: rotate(90deg); }

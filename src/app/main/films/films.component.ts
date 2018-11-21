@@ -6,7 +6,9 @@ export class FilmsComponent implements IComponent
   {
     return `
         <div class="film-header">Films</div>
-        <div class="film-data"></div>
+        <div class="film-data">
+        
+        </div>
     `;
   }
 }

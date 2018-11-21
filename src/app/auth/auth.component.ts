@@ -1,12 +1,34 @@
 import { IComponent } from '../types';
 
+export function formContent(content: string, callback: Function): string
+{
+  const id = `form-id-${Math.random()}`;
+
+  setTimeout(() =>
+  {
+    const form = document.getElementById(id);
+    form.addEventListener('submit', (event: Event) =>
+    {
+      event.preventDefault();
+      console.warn('evemt', event);
+
+      callback();
+    });
+  }, 1);
+
+  return `<form noValidate id="${id}">${content}</form>`;
+}
+
 export class AuthComponent implements IComponent
 {
+  private handler = () =>
+  {
+    console.warn('HANDLER')
+  };
+
   public template(): string
   {
-    return `    
-                <!-- Login form -->
-                <form id="login">
+    const content = `
                   <div class="alert error">Invalid username or password!</div>
                   <fieldset>
                     <input name="email" placeholder="Username" type="email" /><i class="fa fa-user"></i>
@@ -14,12 +36,8 @@ export class AuthComponent implements IComponent
                   <fieldset>
                     <input name="password" placeholder="Password" type="password" /><i class="fa fa-lock"></i>
                   </fieldset>
-                    <fieldset class="f-left">
-                        <input checked="checked" class="rememberMeCheck" name="RememberMe" id="RememberMe" type="checkbox" value="1" />
-                        <label for="RememberMe">Remember me</label>
-                    </fieldset>
-                    <input class="f-right" name="Login" type="submit" value="Login" />
-                </form>
-            `;
+                    <input class="f-right" name="Login" type="submit" value="Login" />`;
+
+    return formContent(content, this.handler);
   }
 }

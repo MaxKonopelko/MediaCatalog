@@ -277,19 +277,49 @@ body {
             flex: 2;
             border-right: 5px solid #f2f2f2;
             margin: 0 5px 0 5px;
+            overflow-x: auto;
+            position: relative;
 
             .music-ul {
-              display: flex;
-              align-items: center;
-              height: 50px;
-              flex-direction: column;
+              padding: 0 20px 10px 20px;
 
-              .music-li{
+              .music-li {
                 font-size: 18px;
                 font-family: 'Lobster', cursive;
                 transition: 1.5s;
                 list-style-type: none;
                 padding: 10px;
+
+                .fa-close {
+                  display: none;
+                  float: right;
+                  right: 10px;
+                  cursor: pointer;
+                }
+
+                .music-span:hover {
+                  border-bottom: 3px solid dimgray;
+                  cursor: pointer;
+                }
+
+                .music-span {
+                  font-size: 18px;
+                  font-family: 'Lobster', cursive;
+                  //border-bottom: 3px solid white;
+
+                  .span-strong {
+                    font-size: 19px;
+                    letter-spacing: 1px;
+                  }
+                }
+
+                .fa-close:hover {
+                  transition: all .3s ease-out;
+                  transform: rotate(90deg);
+                }
+              }
+              .music-li:hover .fa-close {
+                display: inline-block;
               }
             }
           }
@@ -317,8 +347,10 @@ body {
                   padding: 10px;
                 }
               }
+
               .music-name {
               }
+
               .music-play {
                 display: flex;
                 justify-content: center;
@@ -332,6 +364,13 @@ body {
               }
             }
           }
+        }
+
+        .newSpan {
+          background: #333333;
+          color: #FFF;
+          font-size: 24px;
+          font-family: cursive;
         }
       }
 
@@ -481,6 +520,11 @@ body {
                   font-size: 18px;
                   font-family: 'Lobster', cursive;
                   //border-bottom: 3px solid white;
+
+                  .span-strong {
+                    font-size: 19px;
+                    letter-spacing: 1px;
+                  }
                 }
 
                 .fa-close:hover {

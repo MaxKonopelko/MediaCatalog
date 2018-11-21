@@ -15,13 +15,13 @@ export class ImagesUrlComponent implements IComponent
     document.getElementById('form-image').addEventListener('submit', this.handleSubmit);
   }
 
-  public handleChange = () =>
+  private handleChange = () =>
   {
-    const value = document.getElementById('url-photo')['value'];
-    this._imagesContentComponent.showImageByLink(value);
+    const link = document.getElementById('url-photo')['value'];
+    this._imagesContentComponent.showImageByLink(link);
   };
 
-  public handleSubmit = (event: Event) =>
+  private handleSubmit = (event: Event) =>
   {
     event.preventDefault();
     const urlPhoto = document.getElementById('url-photo');

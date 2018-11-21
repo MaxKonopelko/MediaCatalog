@@ -31,11 +31,11 @@ export class ImagesListComponent implements IComponent
 
     images.forEach(image =>
     {
-      console.log('this.activeId', this.activeId);
       this.buffer = image.id;
       str += `
              <li id="photo-li" class="photo-li" data-id=${image.id}>
-                <span id="photo-span" class="photo-span" ><strong>${image.id}. Photo: </strong> ${image.name}
+                <span id="photo-span" class="photo-span" >
+                    <strong>${image.id}. Photo: </strong> ${image.name}
                 </span>
                 <i id='fa-close' class="fa fa-close" style="font-size:24px"></i>
              </li>
@@ -68,7 +68,6 @@ export class ImagesListComponent implements IComponent
 
   public activateElement = () =>
   {
-    console.log('activateElement', this.activeId);
     const liCollection = document.querySelectorAll('.photos li');
     const listLi = Array.from(liCollection);
     const liElem = listLi.find(le => parseInt(le.getAttribute('data-id')) === this.activeId);
