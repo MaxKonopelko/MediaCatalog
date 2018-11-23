@@ -1,29 +1,11 @@
 import { IComponent } from '../types';
-
-export function formContent(content: string, callback: Function): string
-{
-  const id = `form-id-${Math.random()}`;
-
-  setTimeout(() =>
-  {
-    const form = document.getElementById(id);
-    form.addEventListener('submit', (event: Event) =>
-    {
-      event.preventDefault();
-      console.warn('evemt', event);
-
-      callback();
-    });
-  }, 1);
-
-  return `<form noValidate id="${id}">${content}</form>`;
-}
+import { formContent } from '../controls/controls';
 
 export class AuthComponent implements IComponent
 {
   private handler = () =>
   {
-    console.warn('HANDLER')
+    console.warn('HANDLER');
   };
 
   public template(): string
@@ -31,13 +13,14 @@ export class AuthComponent implements IComponent
     const content = `
                   <div class="alert error">Invalid username or password!</div>
                   <fieldset>
-                    <input name="email" placeholder="Username" type="email" /><i class="fa fa-user"></i>
+                    <input name="email" placeholder="Username" type="email" required  /><i class="fa fa-user"></i>
                   </fieldset>
                   <fieldset>
-                    <input name="password" placeholder="Password" type="password" /><i class="fa fa-lock"></i>
+                    <input name="password" placeholder="Password" type="password" required pattern="[0-9]{6,14}"/><i class="fa fa-lock"></i>
                   </fieldset>
                     <input class="f-right" name="Login" type="submit" value="Login" />`;
 
     return formContent(content, this.handler);
+
   }
 }

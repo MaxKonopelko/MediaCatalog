@@ -24,7 +24,7 @@ export class MusicsListComponent implements IComponent
     this.activateElement();
   }
 
-  public refresh(): void
+  private refresh(): void
   {
     const music = MusicService.get();
     const musicUl = document.getElementById('music-ul');
@@ -58,7 +58,10 @@ export class MusicsListComponent implements IComponent
       spanElement.addEventListener('click', () =>
       {
         const parent = spanElement.parentElement;
+        console.log('parent', parent);
         const id = parseInt(parent.dataset.id);
+        console.log('parent.dataset.id)', id);
+
         this.activeId = id;
         this._musicsContentComponent.showMusicById(id);
         this.refresh();
@@ -96,7 +99,7 @@ export class MusicsListComponent implements IComponent
 
   public template(): string
   {
-    return    ` 
+    return ` 
                   <div class="music-list">
                         <ul class="music-ul" id="music-ul"></ul>
                   </div>

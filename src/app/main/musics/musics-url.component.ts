@@ -2,6 +2,7 @@ import { Component } from '../../../libreris/component';
 import { IComponent } from '../../types';
 import { MusicsListComponent } from './musics-list.component';
 import { MusicsContentComponent } from './musics-content.component';
+import { formContent } from '../../controls/controls';
 
 @Component
 export class MusicsUrlComponent implements IComponent
@@ -12,7 +13,6 @@ export class MusicsUrlComponent implements IComponent
   public onInit(): void
   {
     document.getElementById('url-music').addEventListener('change', this.handleChange);
-    document.getElementById('form-music').addEventListener('submit', this.handleSubmit);
   }
 
   private handleChange = () =>
@@ -23,7 +23,6 @@ export class MusicsUrlComponent implements IComponent
 
   private handleSubmit = (event: Event) =>
   {
-    event.preventDefault();
     const urlMusic = document.getElementById('url-music');
 
     const music = {
@@ -37,7 +36,7 @@ export class MusicsUrlComponent implements IComponent
     this.resetForm();
   };
 
-  public resetForm(): void
+  private resetForm(): void
   {
     document.getElementById('url-music')['value'] = '';
     document.getElementById('url-name')['value'] = '';
@@ -46,34 +45,33 @@ export class MusicsUrlComponent implements IComponent
 
   public template(): string
   {
-    return ` 
-                      <div class="form-url">
-                          <form id="form-music" class="form">
-                                <div class="col-3">
-                                <input class="effect-7" id="url-music" type="text" placeholder="Url music..">
-                                    <span class="focus-border">
-                                      <i></i>
-                                    </span>
-                                </div>
-                                <div class="col-3">
-                                    <input class="effect-7" id="url-author"  type="text" placeholder="Author name..">
-                                      <span class="focus-border">
-                                        <i></i>
-                                      </span>
-                                </div>
-                                <div class="col-3">
-                                    <input class="effect-7" id="url-name"  type="text" placeholder="Music name..">
-                                      <span class="focus-border">
-                                        <i></i>
-                                      </span>
-                                </div>
-                                <div class="col-3">
-                                  <input class="effect-7" id="submit" type="submit" value="Save">
-                                    <span class="focus-border">
-                                      <i></i>
-                                    </span>
-                                </div>
-                          </form>
-                      </div>`;
+    const content = `                        
+                      <div class="col-3">
+                      <input class="effect-7" id="url-music" type="text" placeholder="Url music.." required pattern="https?:\\/\\/.*\\.(?:mp3|mp4)" >
+                          <span class="focus-border">
+                            <i></i>
+                          </span>
+                      </div>
+                      <div class="col-3">
+                          <input class="effect-7" id="url-author"  type="text" placeholder="Author name.." required pattern="[A-Za-zА-Яа-яЁё0-9]{1,15}">
+                            <span class="focus-border">
+                              <i></i>
+                            </span>
+                      </div>
+                      <div class="col-3">
+                          <input class="effect-7" id="url-name"  type="text" placeholder="Music name.." required pattern="[A-Za-zА-Яа-яЁё0-9]{1,15}">
+                            <span class="focus-border">
+                              <i></i>
+                            </span>
+                      </div>
+                      <div class="col-3">
+                        <input class="effect-7" id="submit" type="submit" value="Save">
+                          <span class="focus-border">
+                            <i></i>
+                          </span>
+                      </div>                
+                   `;
+
+    return formContent(content, this.handleSubmit);
   }
 }

@@ -132,6 +132,9 @@ body {
       border: 1px solid rgba(161, 199, 44, 0.6);
       box-shadow: 0 0 5px rgba(161, 199, 44, 0.6);
       outline: none; }
+    .container .header form.was-validated input:invalid {
+      border: 2px solid red;
+      transition: 1.5s; }
   .container .main div {
     margin: 5px; }
   .container .main .menu {
@@ -145,7 +148,7 @@ body {
     text-align: center;
     border: 1px solid #ddd; }
     .container .main .menu div:hover {
-      box-shadow: inset 0 0 0 2px #53ea93;
+      box-shadow: inset 0px 0px 5px 3px #483a4680;
       transition: 1s;
       background: #fafbfc;
       cursor: pointer; }
@@ -171,6 +174,8 @@ body {
       display: flex;
       flex-direction: column;
       background-color: #f2f2f2; }
+      .container .main .content .music-data input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px greenyellow inset; }
       .container .main .content .music-data .url-root {
         flex: 0.3;
         background: #fff;
@@ -234,6 +239,9 @@ body {
           top: 0;
           height: 100%;
           transition: 0.6s; }
+        .container .main .content .music-data .url-root form.was-validated input:invalid {
+          border: 2px solid red;
+          transition: 1.5s; }
       .container .main .content .music-data form {
         display: flex;
         margin: 10px; }
@@ -394,6 +402,9 @@ body {
           top: 0;
           height: 100%;
           transition: 0.6s; }
+        .container .main .content .photo-data .url-root form.was-validated input:invalid {
+          border: 2px solid red;
+          transition: 1.5s; }
         .container .main .content .photo-data .url-root form {
           display: flex;
           margin: 10px; }
