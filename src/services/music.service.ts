@@ -5,12 +5,12 @@ class MusicServiceClass
 {
   private storage = new StorageService<IMusicModel>('music');
 
-  public getId(id: number): IMusicModel
+  public getById(id: number): IMusicModel
   {
     return this.storage.getById(id);
   }
 
-  public get(): IMusicModel[]
+  public getList(): IMusicModel[]
   {
     return this.storage.getObj();
   }

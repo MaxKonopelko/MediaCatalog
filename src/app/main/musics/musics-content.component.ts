@@ -8,8 +8,7 @@ export class MusicsContentComponent implements IComponent
 {
   public showMusicById(id: number): void
   {
-    const music = MusicService.getId(id);
-    document.getElementById('music')['src'] = music.link;
+    const music = MusicService.getById(id);
     document.getElementById('music-author').innerHTML = `Name : ${upperCase(music.authorFullName)}`;
     document.getElementById('music-name').innerHTML = `Track : ${upperCase(music.name)}`;
     this.showMusicByLink(music.link);
@@ -20,9 +19,9 @@ export class MusicsContentComponent implements IComponent
     const audio = document.getElementById('music-play');
     audio.innerHTML = `
                        <audio controls autoplay loop>
-                         <source type="audio" id="music" src="${link}">
+                         <source type="audio/mpeg" id="music" src="${link}">
                        </audio>
-                     `;
+                      `;
   }
 
   public clear(): void
@@ -32,15 +31,17 @@ export class MusicsContentComponent implements IComponent
 
   public template(): string
   {
+    const musicList = MusicService.getList();
+
     return `
               <div class="music-content">
                   <div class="music-block"
                       <div class="music-image" id="music-image"><img src="images/guf.jpg">
-                      <div class="music-author" id="music-author"></div>
-                      <div class="music-name" id="music-name"></div>
+                      <div class="music-author" id="music-author">Name: ${upperCase(musicList[0].authorFullName)}</div>
+                      <div class="music-name" id="music-name">Track : ${upperCase(musicList[0].name)}</div>
                       <div class="music-play" id="music-play">
-                          <audio controls autoplay loop>
-                              <source type="audio" id="music" src="">
+                          <audio controls>
+                              <source type="audio/mpeg" id="music" src="${musicList[0].link}">
                           </audio>
                       </div>
                    </div>

@@ -26,7 +26,7 @@ export class MusicsListComponent implements IComponent
 
   private refresh(): void
   {
-    const music = MusicService.get();
+    const music = MusicService.getList();
     const musicUl = document.getElementById('music-ul');
     let str = '';
 
@@ -36,7 +36,7 @@ export class MusicsListComponent implements IComponent
       str += `
               <li id="music-li" class="music-li" data-id=${music.id}>
                 <span id="music-span" class="music-span" >
-                    <span id="span-strong" class="span-strong">${music.id}. ${upperCase(music.authorFullName)} - </span>  ${music.name}
+                   ${music.id}. ${upperCase(music.authorFullName)} - ${music.name}
                 </span>
                 <i id='fa-close' class="fa fa-close" style="font-size:24px"></i>
               </li> 
@@ -58,10 +58,7 @@ export class MusicsListComponent implements IComponent
       spanElement.addEventListener('click', () =>
       {
         const parent = spanElement.parentElement;
-        console.log('parent', parent);
         const id = parseInt(parent.dataset.id);
-        console.log('parent.dataset.id)', id);
-
         this.activeId = id;
         this._musicsContentComponent.showMusicById(id);
         this.refresh();
@@ -72,7 +69,6 @@ export class MusicsListComponent implements IComponent
 
   public activateElement = () =>
   {
-    console.log('activateElement', this.activeId);
     const liCollection = document.querySelectorAll('.music-ul li');
     const listLi = Array.from(liCollection);
     const liElem = listLi.find(le => parseInt(le.getAttribute('data-id')) === this.activeId);
@@ -100,9 +96,9 @@ export class MusicsListComponent implements IComponent
   public template(): string
   {
     return ` 
-                  <div class="music-list">
-                        <ul class="music-ul" id="music-ul"></ul>
-                  </div>
-              `;
+            <div class="music-list">
+                  <ul class="music-ul" id="music-ul"></ul>
+            </div>
+           `;
   }
 }

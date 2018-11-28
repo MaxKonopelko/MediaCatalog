@@ -7,7 +7,7 @@ export class ImagesContentComponent implements IComponent
 {
   public showImageById(id: number): void
   {
-    document.getElementById('image')['src'] = ImageService.getId(id).link;
+    document.getElementById('image')['src'] = ImageService.getById(id).link;
   }
 
   public showImageByLink(link: string): void

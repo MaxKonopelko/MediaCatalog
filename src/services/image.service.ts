@@ -5,12 +5,12 @@ class ImageServiceClass
 {
   private storage = new StorageService<IImageModel>('image');
 
-  public getId(id: number): IImageModel
+  public getById(id: number): IImageModel
   {
     return this.storage.getById(id);
   }
 
-  public get(): IImageModel[]
+  public getList(): IImageModel[]
   {
     return this.storage.getObj();
   }

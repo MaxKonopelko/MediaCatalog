@@ -25,7 +25,7 @@ export class ImagesListComponent implements IComponent
 
   private refresh(): void
   {
-    const images = ImageService.get();
+    const images = ImageService.getList();
     const photos = document.getElementById('photos');
     let str = '';
 
@@ -35,7 +35,7 @@ export class ImagesListComponent implements IComponent
       str += `
              <li id="photo-li" class="photo-li" data-id=${image.id}>
                 <span id="photo-span" class="photo-span" >
-                    <span id="span-strong" class="span-strong">${image.id}. Photo: </span> ${image.name}
+                    ${image.id}. Photo: ${image.name}
                 </span>
                 <i id='fa-close' class="fa fa-close" style="font-size:24px"></i>
              </li>

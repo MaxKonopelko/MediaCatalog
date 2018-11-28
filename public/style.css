@@ -244,7 +244,8 @@ body {
           transition: 1.5s; }
       .container .main .content .music-data form {
         display: flex;
-        margin: 10px; }
+        margin: 10px;
+        flex-direction: column; }
       .container .main .content .music-data .music-root {
         display: flex;
         background: #fff;
@@ -273,11 +274,12 @@ body {
                 border-bottom: 3px solid dimgray;
                 cursor: pointer; }
               .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span {
-                font-size: 18px;
-                font-family: 'Lobster', cursive; }
+                font-size: 19px;
+                font-family: 'Lobster', cursive;
+                letter-spacing: 1px; }
                 .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span .span-strong {
                   font-size: 19px;
-                  letter-spacing: 1px; }
+                  letter-spacing: 2px; }
               .container .main .content .music-data .music-root .music-list .music-ul .music-li .fa-close:hover {
                 transition: all .3s ease-out;
                 transform: rotate(90deg); }
@@ -322,10 +324,79 @@ body {
       font-size: 24px;
       font-family: 'Lobster', cursive; }
     .container .main .content .film-data {
-      height: 500px;
+      height: 600px;
       display: flex;
-      justify-content: center;
-      border: 5px solid #f2f2f2; }
+      flex-direction: column;
+      background-color: #f2f2f2; }
+      .container .main .content .film-data .url-root {
+        flex: 0.3;
+        background: #fff;
+        /* necessary to give position: relative to parent. */ }
+        .container .main .content .film-data .url-root :focus {
+          outline: none; }
+        .container .main .content .film-data .url-root .col-3 {
+          float: left;
+          width: 33.33%;
+          margin: 10px 1%;
+          position: relative; }
+        .container .main .content .film-data .url-root input[type="text"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .film-data .url-root input[type="submit"] {
+          font: 15px/24px "Lato", Arial, sans-serif;
+          color: #333;
+          width: 100%;
+          box-sizing: border-box;
+          letter-spacing: 1px; }
+        .container .main .content .film-data .url-root .effect-7 {
+          border: 1px solid #ccc;
+          padding: 7px 14px 9px;
+          transition: 0.4s; }
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border:before,
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #3399FF;
+          transition: 0.4s; }
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border:after {
+          top: auto;
+          bottom: 0; }
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border i:before,
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border i:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 2px;
+          height: 0;
+          background-color: #3399FF;
+          transition: 0.6s; }
+        .container .main .content .film-data .url-root .effect-7 ~ .focus-border i:after {
+          left: auto;
+          right: 0; }
+        .container .main .content .film-data .url-root .effect-7:focus ~ .focus-border:before,
+        .container .main .content .film-data .url-root .effect-7:focus ~ .focus-border:after {
+          left: 0;
+          width: 100%;
+          transition: 0.4s; }
+        .container .main .content .film-data .url-root .effect-7:focus ~ .focus-border i:before,
+        .container .main .content .film-data .url-root .effect-7:focus ~ .focus-border i:after {
+          top: 0;
+          height: 100%;
+          transition: 0.6s; }
+        .container .main .content .film-data .url-root form.was-validated input:invalid {
+          border: 2px solid red;
+          transition: 1.5s; }
+        .container .main .content .film-data .url-root form {
+          display: flex;
+          margin: 10px; }
     .container .main .content .photo-header {
       display: flex;
       justify-content: center;
