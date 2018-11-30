@@ -1,3 +1,10 @@
+
+// TODO
+// const t = [
+//   {key: 'name', value: 'ASdasdasd'},
+//   {key: 'email', value: 'asd@adsdad.ca'},
+// ]
+
 export function formContent(content: string, callback: Function): string
 {
   const id = `form-id-${Math.random()}`;
@@ -11,6 +18,7 @@ export function formContent(content: string, callback: Function): string
 
       if (form.checkValidity())
       {
+
         console.log('VALID');
         form.classList.remove('was-validated');
         callback();

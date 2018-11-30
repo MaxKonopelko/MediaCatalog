@@ -1,15 +1,15 @@
 import { IComponent } from '../../types';
 import { Component } from '../../../libreris/component';
-import { MusicsUrlComponent } from './musics-url.component';
-import { MusicsListComponent } from './musics-list.component';
-import { MusicsContentComponent } from './musics-content.component';
+import { MusicUrlComponent } from './music-url.component';
+import { MusicListComponent } from './music-list.component';
+import { MusicContentComponent } from './music-content.component';
 
 @Component
-export class MusicsComponent implements IComponent
+export class MusicComponent implements IComponent
 {
-  private _urlComponent = new MusicsUrlComponent();
-  private _musicList = new MusicsListComponent();
-  private _musicContentComponent = new MusicsContentComponent();
+  private _urlComponent = new MusicUrlComponent();
+  private _musicList = new MusicListComponent();
+  private _musicContentComponent = new MusicContentComponent();
 
   public onInit(): void
   {

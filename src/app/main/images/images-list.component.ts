@@ -2,6 +2,7 @@ import { IComponent } from '../../types';
 import { Component } from '../../../libreris/component';
 import { ImageService } from '../../../services/image.service';
 import { ImagesContentComponent } from './images-content.component';
+import { IImageModel } from '../../../models/models';
 
 @Component
 export class ImagesListComponent implements IComponent
@@ -15,7 +16,7 @@ export class ImagesListComponent implements IComponent
     this.refresh();
   }
 
-  public add(image: object): void
+  public add(image: IImageModel): void
   {
     ImageService.add(image);
     this.refresh();

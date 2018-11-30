@@ -4,7 +4,7 @@ import { MusicService } from '../../../services/music.service';
 import { upperCase } from '../../../libreris/common';
 
 @Component
-export class MusicsContentComponent implements IComponent
+export class MusicContentComponent implements IComponent
 {
   public showMusicById(id: number): void
   {

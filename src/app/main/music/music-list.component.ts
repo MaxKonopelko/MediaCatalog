@@ -1,13 +1,14 @@
 import { Component } from '../../../libreris/component';
 import { IComponent } from '../../types';
 import { MusicService } from '../../../services/music.service';
-import { MusicsContentComponent } from './musics-content.component';
+import { MusicContentComponent } from './music-content.component';
 import { upperCase } from '../../../libreris/common';
+import { IMusicModel } from '../../../models/models';
 
 @Component
-export class MusicsListComponent implements IComponent
+export class MusicListComponent implements IComponent
 {
-  private _musicsContentComponent = new MusicsContentComponent();
+  private _musicsContentComponent = new MusicContentComponent();
   private activeId: number;
   private buffer: number;
 
@@ -16,7 +17,7 @@ export class MusicsListComponent implements IComponent
     this.refresh();
   }
 
-  public add(music: object): void
+  public add(music: IMusicModel): void
   {
     MusicService.add(music);
     this.refresh();

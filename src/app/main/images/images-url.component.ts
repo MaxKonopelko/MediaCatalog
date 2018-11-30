@@ -3,6 +3,8 @@ import { ImagesListComponent } from './images-list.component';
 import { IComponent } from '../../types';
 import { ImagesContentComponent } from './images-content.component';
 import { formContent } from '../../controls/controls';
+import { IImageModel } from '../../../models/models';
+import { Patterns } from '../../../libreris/common';
 
 @Component
 export class ImagesUrlComponent implements IComponent
@@ -21,15 +23,12 @@ export class ImagesUrlComponent implements IComponent
     this._imagesContentComponent.showImageByLink(link);
   };
 
-  private handleSubmit = (event: Event) =>
+  private handleSubmit = () =>
   {
-    const urlPhoto = document.getElementById('url-photo');
-
-    const image = {
-      link: urlPhoto['value'],
+    const image: IImageModel = {
+      link: document.getElementById('url-photo')['value'],
       name: document.getElementById('url-name')['value'],
       authorFullName: '',
-      top: '',
     };
 
     this._photoList.add(image);
@@ -44,25 +43,28 @@ export class ImagesUrlComponent implements IComponent
 
   public template(): string
   {
-    const content = `                   
-                      <div class="col-3">
-                      <input class="effect-7" id="url-photo" type="text" placeholder="Url image.." required pattern="https?:\\/\\/.*\\.(?:png|jpg|jpeg|gif)">
-                          <span class="focus-border">
-                            <i></i>
-                          </span>
-                      </div>
-                      <div class="col-3">
-                          <input class="effect-7" id="url-name"  type="text" placeholder="Image name.." required>
+    const content = ` <div class="flex">                    
+                        <div class="col-3">
+                        <input class="effect-7" id="url-photo" type="text" placeholder="Url image.." required pattern="${Patterns.ImageUrl}">
                             <span class="focus-border">
                               <i></i>
                             </span>
+                        </div>
                       </div>
-                      <div class="col-3">
-                        <input class="effect-7" id="submit" type="submit" value="Save" required>
-                          <span class="focus-border">
-                            <i></i>
-                          </span>
-                      </div>      
+                      <div class="flex">  
+                        <div class="col-3">
+                            <input class="effect-7" id="url-name"  type="text" placeholder="Image name.." required pattern="${Patterns.Name}">
+                              <span class="focus-border">
+                                <i></i>
+                              </span>
+                        </div>
+                        <div class="col-3">
+                          <input class="effect-7" id="submit" type="submit" value="Save" required>
+                            <span class="focus-border">
+                              <i></i>
+                            </span>
+                        </div>      
+                      </div>
                    `;
     return formContent(content, this.handleSubmit);
   }

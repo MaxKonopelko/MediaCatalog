@@ -8,7 +8,6 @@ export interface IImageModel extends IEntity
   link?: string;
   name?: string;
   authorFullName?: string;
-  top?: string;
 }
 
 export interface IMusicModel extends IEntity
@@ -16,7 +15,6 @@ export interface IMusicModel extends IEntity
   link?: string;
   name?: string;
   authorFullName?: string;
-  food?: string;
 }
 
 export interface IFilmsModel extends IEntity
