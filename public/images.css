@@ -1,0 +1,153 @@
+.photo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 24px;
+  font-family: 'Lobster', cursive; }
+
+.photo-data {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f2f2f2; }
+  .photo-data .url-root {
+    flex: 0.3;
+    background: #fff;
+    /* necessary to give position: relative to parent. */ }
+    .photo-data .url-root :focus {
+      outline: none; }
+    .photo-data .url-root .col-3 {
+      float: left;
+      width: 100%;
+      position: relative; }
+    .photo-data .url-root input[type="text"] {
+      font: 15px/24px "Lato", Arial, sans-serif;
+      color: #333;
+      width: 100%;
+      box-sizing: border-box;
+      letter-spacing: 1px; }
+    .photo-data .url-root input[type="submit"] {
+      font: 15px/24px "Lato", Arial, sans-serif;
+      color: #333;
+      width: 100%;
+      box-sizing: border-box;
+      letter-spacing: 1px; }
+    .photo-data .url-root .effect-7 {
+      border: 1px solid #ccc;
+      padding: 7px 14px 9px;
+      transition: 0.4s; }
+    .photo-data .url-root .effect-7 ~ .focus-border:before,
+    .photo-data .url-root .effect-7 ~ .focus-border:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #3399FF;
+      transition: 0.4s; }
+    .photo-data .url-root .effect-7 ~ .focus-border:after {
+      top: auto;
+      bottom: 0; }
+    .photo-data .url-root .effect-7 ~ .focus-border i:before,
+    .photo-data .url-root .effect-7 ~ .focus-border i:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background-color: #3399FF;
+      transition: 0.6s; }
+    .photo-data .url-root .effect-7 ~ .focus-border i:after {
+      left: auto;
+      right: 0; }
+    .photo-data .url-root .effect-7:focus ~ .focus-border:before,
+    .photo-data .url-root .effect-7:focus ~ .focus-border:after {
+      left: 0;
+      width: 100%;
+      transition: 0.4s; }
+    .photo-data .url-root .effect-7:focus ~ .focus-border i:before,
+    .photo-data .url-root .effect-7:focus ~ .focus-border i:after {
+      top: 0;
+      height: 100%;
+      transition: 0.6s; }
+    .photo-data .url-root form.was-validated input:invalid {
+      border: 2px solid red;
+      transition: 1.5s; }
+    .photo-data .url-root form {
+      display: flex;
+      margin: 10px;
+      flex-direction: column; }
+      .photo-data .url-root form .flex {
+        display: flex; }
+  .photo-data .photo-list {
+    flex: 1; }
+  .photo-data .photo-root {
+    display: flex;
+    flex: 4;
+    background: #fff;
+    margin-top: 0; }
+    .photo-data .photo-root .photo-content {
+      display: flex;
+      flex: 4;
+      background: #fff;
+      margin: 0 5px 0 5px;
+      border-right: 5px solid #f2f2f2; }
+    .photo-data .photo-root .newSpan {
+      background: #333333;
+      color: #FFF;
+      font-size: 24px;
+      font-family: cursive; }
+    .photo-data .photo-root .photo-list {
+      flex: 3;
+      overflow-x: auto;
+      position: relative; }
+      .photo-data .photo-root .photo-list .photos {
+        padding: 0 20px 10px 20px; }
+        .photo-data .photo-root .photo-list .photos .photo-li {
+          font-size: 18px;
+          font-family: 'Lobster', cursive;
+          transition: 1.5s;
+          list-style-type: none;
+          padding: 10px; }
+          .photo-data .photo-root .photo-list .photos .photo-li .fa-close {
+            display: none;
+            float: right;
+            right: 10px;
+            cursor: pointer; }
+          .photo-data .photo-root .photo-list .photos .photo-li .photo-span:hover {
+            border-bottom: 3px solid dimgray;
+            cursor: pointer; }
+          .photo-data .photo-root .photo-list .photos .photo-li .photo-span {
+            font-size: 18px;
+            font-family: 'Lobster', cursive; }
+            .photo-data .photo-root .photo-list .photos .photo-li .photo-span .span-strong {
+              font-size: 19px;
+              letter-spacing: 1px; }
+          .photo-data .photo-root .photo-list .photos .photo-li .fa-close:hover {
+            transition: all .3s ease-out;
+            transform: rotate(90deg); }
+        .photo-data .photo-root .photo-list .photos .photo-li:hover .fa-close {
+          display: inline-block; }
+  .photo-data .photo {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll; }
+    .photo-data .photo .photo-size {
+      width: 400px;
+      position: relative; }
+      .photo-data .photo .photo-size .image {
+        width: 100%;
+        height: auto;
+        border: 5px solid darkgray;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0; }
