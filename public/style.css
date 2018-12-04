@@ -430,9 +430,6 @@ body {
                 font-size: 19px;
                 font-family: 'Lobster', cursive;
                 letter-spacing: 1px; }
-                .container .main .content .music-data .music-root .music-list .music-ul .music-li .music-span .span-strong {
-                  font-size: 19px;
-                  letter-spacing: 2px; }
               .container .main .content .music-data .music-root .music-list .music-ul .music-li .fa-close:hover {
                 transition: all .3s ease-out;
                 transform: rotate(90deg); }
@@ -557,20 +554,61 @@ body {
         background: #fff;
         flex: 4;
         margin-top: 0; }
+        .container .main .content .film-data .films-root .films-list {
+          flex: 1;
+          margin: 0 5px 0 5px;
+          overflow-x: auto;
+          position: relative; }
+          .container .main .content .film-data .films-root .films-list .films-ul {
+            padding: 0 20px 10px 20px; }
+            .container .main .content .film-data .films-root .films-list .films-ul .film-li {
+              font-size: 18px;
+              font-family: 'Lobster', cursive;
+              transition: 1.5s;
+              list-style-type: none;
+              padding: 10px; }
+              .container .main .content .film-data .films-root .films-list .films-ul .film-li .fa-close {
+                display: none;
+                float: right;
+                right: 10px;
+                cursor: pointer; }
+              .container .main .content .film-data .films-root .films-list .films-ul .film-li .film-span:hover {
+                border-bottom: 3px solid dimgray;
+                cursor: pointer; }
+              .container .main .content .film-data .films-root .films-list .films-ul .film-li .film-span {
+                font-size: 19px;
+                font-family: 'Lobster', cursive;
+                letter-spacing: 1px; }
+              .container .main .content .film-data .films-root .films-list .films-ul .film-li .fa-close:hover {
+                transition: all .3s ease-out;
+                transform: rotate(90deg); }
+            .container .main .content .film-data .films-root .films-list .films-ul .film-li:hover .fa-close {
+              display: inline-block; }
         .container .main .content .film-data .films-root .films-content {
           display: flex;
           flex: 2;
           background: #fff;
           margin: 0 5px 0 5px;
           border-right: 5px solid #f2f2f2; }
-          .container .main .content .film-data .films-root .films-content .films-block {
+          .container .main .content .film-data .films-root .films-content .films-play {
             flex: 1;
-            display: flex; }
-            .container .main .content .film-data .films-root .films-content .films-block video {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: -webkit-radial-gradient(center center, #454f56, #1d2124); }
+            .container .main .content .film-data .films-root .films-content .films-play .films-name {
+              background: #333333;
+              color: #FFF;
+              font-size: 18px;
+              font-family: 'Lobster', cursive; }
+            .container .main .content .film-data .films-root .films-content .films-play .films-video {
+              width: 100%; }
+            .container .main .content .film-data .films-root .films-content .films-play video {
               flex: 1;
-              width: 100%;
-              background-image: -webkit-radial-gradient(center center, #454f56, #1d2124); }
-        .container .main .content .film-data .films-root .films-list {
-          flex: 1;
-          overflow-x: auto;
-          position: relative; }
+              width: 100%; }
+      .container .main .content .film-data .newSpan {
+        background: #333333;
+        color: #FFF;
+        font-size: 24px;
+        font-family: cursive; }

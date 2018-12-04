@@ -58,6 +58,52 @@
     flex: 4;
     margin-top: 0;
 
+    .films-list {
+      flex: 1;
+      margin: 0 5px 0 5px;
+      overflow-x: auto;
+      position: relative;
+
+      .films-ul {
+        padding: 0 20px 10px 20px;
+
+        .film-li {
+          font-size: 18px;
+          font-family: 'Lobster', cursive;
+          transition: 1.5s;
+          list-style-type: none;
+          padding: 10px;
+
+          .fa-close {
+            display: none;
+            float: right;
+            right: 10px;
+            cursor: pointer;
+          }
+
+          .film-span:hover {
+            border-bottom: 3px solid dimgray;
+            cursor: pointer;
+          }
+
+          .film-span {
+            font-size: 19px;
+            font-family: 'Lobster', cursive;
+            //border-bottom: 3px solid white;
+            letter-spacing: 1px;
+          }
+
+          .fa-close:hover {
+            transition: all .3s ease-out;
+            transform: rotate(90deg);
+          }
+        }
+        .film-li:hover .fa-close {
+          display: inline-block;
+        }
+      }
+    }
+
     .films-content {
       display: flex;
       flex: 2;
@@ -65,22 +111,37 @@
       margin: 0 5px 0 5px;
       border-right: 5px solid #f2f2f2;
 
-      .films-block {
+      .films-play {
         flex: 1;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: -webkit-radial-gradient(center center, #454f56, #1d2124);
+
+        .films-name{
+          background: #333333;
+          color: #FFF;
+          font-size: 18px;
+          font-family: 'Lobster', cursive;
+        }
+
+        .films-video{
+          width: 100%;
+        }
 
         video {
           flex: 1;
           width: 100%;
-          background-image: -webkit-radial-gradient(center center, #454f56, #1d2124);
         }
       }
     }
-    .films-list {
-      flex: 1;
-      overflow-x: auto;
-      position: relative;
-    }
+  }
 
+  .newSpan {
+    background: #333333;
+    color: #FFF;
+    font-size: 24px;
+    font-family: cursive;
   }
 }

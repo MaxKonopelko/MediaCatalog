@@ -12,9 +12,9 @@ export class ImagesListComponent implements IComponent
   private buffer: number;
 
   public onInit(): void
-  {
-    this.refresh();
-  }
+{
+  this.refresh();
+}
 
   public add(image: IImageModel): void
   {

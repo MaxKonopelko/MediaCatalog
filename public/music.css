@@ -115,9 +115,6 @@
             font-size: 19px;
             font-family: 'Lobster', cursive;
             letter-spacing: 1px; }
-            .music-data .music-root .music-list .music-ul .music-li .music-span .span-strong {
-              font-size: 19px;
-              letter-spacing: 2px; }
           .music-data .music-root .music-list .music-ul .music-li .fa-close:hover {
             transition: all .3s ease-out;
             transform: rotate(90deg); }

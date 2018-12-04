@@ -23,13 +23,14 @@ export class ImagesUrlComponent implements IComponent
     this._imagesContentComponent.showImageByLink(link);
   };
 
-  private handleSubmit = () =>
+  private handleSubmit = (formValues: object) =>
   {
     const image: IImageModel = {
-      link: document.getElementById('url-photo')['value'],
-      name: document.getElementById('url-name')['value'],
+      link: formValues['url'],
+      name: formValues['name'],
       authorFullName: '',
     };
+    console.log('image', image);
 
     this._photoList.add(image);
     this.resetForm();
@@ -45,7 +46,7 @@ export class ImagesUrlComponent implements IComponent
   {
     const content = ` <div class="flex">                    
                         <div class="col-3">
-                        <input class="effect-7" id="url-photo" type="text" placeholder="Url image.." required pattern="${Patterns.ImageUrl}">
+                        <input class="effect-7" id="url-photo" type="text" name="url" value="" placeholder="Url image.." required pattern="${Patterns.ImageUrl}">
                             <span class="focus-border">
                               <i></i>
                             </span>
@@ -53,7 +54,7 @@ export class ImagesUrlComponent implements IComponent
                       </div>
                       <div class="flex">  
                         <div class="col-3">
-                            <input class="effect-7" id="url-name"  type="text" placeholder="Image name.." required pattern="${Patterns.Name}">
+                            <input class="effect-7" id="url-name"  type="text" name="name" value="" placeholder="Image name.." required pattern="${Patterns.Name}">
                               <span class="focus-border">
                                 <i></i>
                               </span>

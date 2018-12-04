@@ -5,6 +5,7 @@ export function createCopy<T>(obj: T): T
 
 export function upperCase(str: string): string
 {
+
   return str[0].toUpperCase() + str.slice(1);
 }
 
@@ -13,11 +14,11 @@ export function isExistHtmlInDOM(element: HTMLElement): boolean
   return document.body.contains(element);
 }
 
-//TODO
 export enum Patterns
 {
-  MusicUrl = 'https?:\\/\\/.*\\.(?:mp3|mp4)',
   ImageUrl = 'https?:\\/\\/.*\\.(?:png|jpg|jpeg|gif)',
+  MusicUrl = 'https?:\\/\\/.*\\.(?:mp3)',
+  FilmUrl = 'https?:\\/\\/.*\\.(?:mp4)',
   Name = '[A-Za-zА-Яа-яЁё0-9]{1,15}',
 
 }

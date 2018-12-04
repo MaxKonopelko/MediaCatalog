@@ -13,7 +13,7 @@ export class MainComponent implements IComponent
 
   public onInit(): void
   {
-    this.handleSubmit(this._musicsComponent);
+    this.handleSubmit(this._filmsComponent);
 
     document.getElementById('fl1').addEventListener('click', (e) => this.handleSubmit(this._imagesComponent));
     document.getElementById('fl2').addEventListener('click', (e) => this.handleSubmit(this._musicsComponent));
