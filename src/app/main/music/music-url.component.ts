@@ -19,14 +19,16 @@ export class MusicUrlComponent implements IComponent
 
   private handleChange = () =>
   {
-    const link = document.getElementById('url-music')['value'];
-    this._musicContentComponent.showMusicByLink(link);
+    //const linkImage = document.getElementById('url-music-image')['value'];
+    const linkMusic = document.getElementById('url-music')['value'];
+    this._musicContentComponent.showMusicByLink(linkMusic);
   };
 
   private handleSubmit = (event: Event) =>
   {
     const music: IMusicModel = {
       link: document.getElementById('url-music')['value'],
+      linkImage: document.getElementById('url-music-image')['value'],
       name: document.getElementById('url-name')['value'],
       authorFullName: document.getElementById('url-author')['value'],
     };
@@ -38,6 +40,7 @@ export class MusicUrlComponent implements IComponent
   private resetForm(): void
   {
     document.getElementById('url-music')['value'] = '';
+    document.getElementById('url-music-image')['value'] = '';
     document.getElementById('url-name')['value'] = '';
     document.getElementById('url-author')['value'] = '';
   }

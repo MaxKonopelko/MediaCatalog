@@ -10,6 +10,8 @@ export class MusicContentComponent implements IComponent
   {
     const music = MusicService.getById(id);
     document.getElementById('music-author').innerHTML = `Name : ${upperCase(music.authorFullName)}`;
+    document.getElementById('music-image')['src'] = music.linkImage;
+    console.log('music', music);
     document.getElementById('music-name').innerHTML = `Track : ${upperCase(music.name)}`;
     this.showMusicByLink(music.link);
   }
@@ -36,7 +38,7 @@ export class MusicContentComponent implements IComponent
     return `
               <div class="music-content">
                   <div class="music-block"
-                      <div class="music-image" id="music-image"><img src="images/guf.jpg">
+                      <div class="music-image" id="music-image"><img src="${musicList[0].linkImage}">
                       <div class="music-author" id="music-author">Name: ${upperCase(musicList[0].authorFullName)}</div>
                       <div class="music-name" id="music-name">Track : ${upperCase(musicList[0].name)}</div>
                       <div class="music-play" id="music-play">
