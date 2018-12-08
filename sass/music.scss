@@ -96,7 +96,6 @@
             font-family: 'Lobster', cursive;
             //border-bottom: 3px solid white;
             letter-spacing: 1px;
-
           }
 
           .fa-close:hover {
@@ -117,35 +116,49 @@
       align-items: center;
 
       .music-block {
+        flex: 1;
         flex-direction: column;
         font-size: 24px;
         font-family: 'Lobster', cursive;
 
-        .music-image {
-          background-size: cover;
-          overflow: hidden;
-          width: 70%;
-          display: flex;
-          height: 70%;
-          margin: 0 auto;
+        .music-parametr {
+          //background-size: cover;
+          //overflow: hidden;
+          //width: 70%;
+          //display: flex;
+          //height: 70%;
+          //margin: 0 auto;
 
-          img {
-            padding: 10px;
+          .music-image {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+
+            .music-cover {
+              width: 100%;
+              height: auto;
+            }
           }
-        }
 
-        .music-name {
-        }
+          .music-author {
+            display: flex;
+            text-align: center;
+          }
 
-        .music-play {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          .music-name {
+          }
 
-          audio {
-            //background: #333333;
-            background-color: #1d2124;
-            flex: 1;
+          .music-play {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            audio {
+              //background: #333333;
+              background-color: #1d2124;
+              flex: 1;
+            }
           }
         }
       }

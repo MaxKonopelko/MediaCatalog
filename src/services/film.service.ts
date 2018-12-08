@@ -1,4 +1,4 @@
-import { IFilmsModel, IImageModel } from '../models/models';
+import { IFilmsModel } from '../models/models';
 import { StorageService } from './storage.service';
 
 class FilmServiceClass

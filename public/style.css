@@ -557,23 +557,26 @@ body {
           justify-content: center;
           align-items: center; }
           .container .main .content .music-data .music-root .music-content .music-block {
+            flex: 1;
             flex-direction: column;
             font-size: 24px;
             font-family: 'Lobster', cursive; }
-            .container .main .content .music-data .music-root .music-content .music-block .music-image {
-              background-size: cover;
-              overflow: hidden;
-              width: 70%;
+            .container .main .content .music-data .music-root .music-content .music-block .music-parametr .music-image {
               display: flex;
-              height: 70%;
-              margin: 0 auto; }
-              .container .main .content .music-data .music-root .music-content .music-block .music-image img {
-                padding: 10px; }
-            .container .main .content .music-data .music-root .music-content .music-block .music-play {
+              width: 300px;
+              height: 300px;
+              margin: auto; }
+              .container .main .content .music-data .music-root .music-content .music-block .music-parametr .music-image .music-cover {
+                width: 100%;
+                height: auto; }
+            .container .main .content .music-data .music-root .music-content .music-block .music-parametr .music-author {
+              display: flex;
+              text-align: center; }
+            .container .main .content .music-data .music-root .music-content .music-block .music-parametr .music-play {
               display: flex;
               justify-content: center;
               align-items: center; }
-              .container .main .content .music-data .music-root .music-content .music-block .music-play audio {
+              .container .main .content .music-data .music-root .music-content .music-block .music-parametr .music-play audio {
                 background-color: #1d2124;
                 flex: 1; }
       .container .main .content .music-data .newSpan {

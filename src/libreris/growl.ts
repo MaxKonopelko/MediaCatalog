@@ -68,7 +68,7 @@ export class Growl
     show.addEventListener('mouseover', stop);
     start();
 
-    let timeout: any = null;
+    let timeout: number;
 
     function start(): void
     {
@@ -77,27 +77,24 @@ export class Growl
 
     function stop(): void
     {
-      if (timeout != null)
-      {
-        clearTimeout(timeout);
-      }
+      clearTimeout(timeout);
+
       show.addEventListener('mouseout', start);
     }
 
     function remove(): void
     {
-      // document.getElementById(id).style.opacity = '0';
-      // setTimeout(() =>
-      // {
-      //   if (document.getElementById(id) != null)
-      //   {
-      //     document.getElementById(id).remove();
-      //   }
-      // }, 1000);
-
-      //document.getElementById(id).style.opacity = '0';
-        document.getElementById(id).remove();
-
+      if (document.getElementById(id) !== null)
+      {
+        document.getElementById(id).style.opacity = '0';
+      }
+      setTimeout(() =>
+      {
+        if (document.getElementById(id) !== null)
+        {
+          document.getElementById(id).remove();
+        }
+      }, 1000);
     }
   }
 

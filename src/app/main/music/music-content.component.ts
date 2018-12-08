@@ -10,9 +10,9 @@ export class MusicContentComponent implements IComponent
   {
     const music = MusicService.getById(id);
     document.getElementById('music-author').innerHTML = `Name : ${upperCase(music.authorFullName)}`;
-    document.getElementById('music-image')['src'] = music.linkImage;
-    console.log('music', music);
     document.getElementById('music-name').innerHTML = `Track : ${upperCase(music.name)}`;
+    document.getElementById('music-cover')['src'] = music.linkImage;
+    console.log('music.linkImage', music.linkImage);
     this.showMusicByLink(music.link);
   }
 
@@ -33,22 +33,24 @@ export class MusicContentComponent implements IComponent
 
   public template(): string
   {
-    const musicList = MusicService.getList();
 
     return `
               <div class="music-content">
-                  <div class="music-block"
-                      <div class="music-image" id="music-image"><img src="${musicList[0].linkImage}">
-                      <div class="music-author" id="music-author">Name: ${upperCase(musicList[0].authorFullName)}</div>
-                      <div class="music-name" id="music-name">Track : ${upperCase(musicList[0].name)}</div>
-                      <div class="music-play" id="music-play">
-                          <audio controls>
-                              <source type="audio/mpeg" id="music" src="${musicList[0].link}">
-                          </audio>
-                      </div>
-                   </div>
-                </div>
-              </div> 
+                      <div class="music-block">
+                          <div class="music-parametr" id="music-parametr">
+                              <div class="music-image" id="music-image">
+                                  <img class="music-cover" id="music-cover" alt="Not image" src="">
+                              </div>
+                              <div class="music-author" id="music-author">Name: </div>
+                              <div class="music-name" id="music-name">Track : </div>
+                              <div class="music-play" id="music-play">
+                                  <audio controls>
+                                      <source type="audio/mpeg" id="music" src="">
+                                  </audio>
+                              </div>
+                          </div>
+                    </div> 
+              </div>
             `;
   }
 }
